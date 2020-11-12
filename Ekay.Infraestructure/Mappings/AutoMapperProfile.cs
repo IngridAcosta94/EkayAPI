@@ -36,7 +36,45 @@ namespace AnimalSpawn.Application.Mappings
 			CreateMap<EmpresaResponseDto, Empresa>();
 
 
+			CreateMap<Autor, AutorRequestDto>();
+			CreateMap<Autor, AutorResponseDto>();
+			CreateMap<AutorRequestDto, Autor>().AfterMap(
+			((source, destination) => {
+				destination.CreateAt = DateTime.Now;
+				destination.CreatedBy = 3;
+				//destination.Status = true;
+			}));
+			CreateMap<AutorResponseDto, Autor>();
 
+			CreateMap<Carpeta, CarpertaRequestDto>();
+			CreateMap<Carpeta, CarpetaResponseDto>();
+			CreateMap<CarpertaRequestDto, Carpeta>().AfterMap(
+			((source, destination) => {
+				destination.CreateAt = DateTime.Now;
+				destination.CreatedBy = 3;
+				//destination.Status = true;
+			}));
+			CreateMap<CarpetaResponseDto, Carpeta>();
+
+			CreateMap<Firmante, FirmanteRequestDto>();
+			CreateMap<Firmante, FirmanteResponseDto>();
+			CreateMap<FirmanteRequestDto, Firmante>().AfterMap(
+			((source, destination) => {
+				destination.CreateAt = DateTime.Now;
+				destination.CreatedBy = 3;
+				//destination.Status = true;
+			}));
+			CreateMap<FirmanteResponseDto, Firmante>();
+
+			CreateMap<Remitente, RemitenteRequestDto>();
+			CreateMap<Remitente, RemitenteResponseDto>();
+			CreateMap<RemitenteRequestDto, Remitente>().AfterMap(
+			((source, destination) => {
+				destination.CreateAt = DateTime.Now;
+				destination.CreatedBy = 3;
+				//destination.Status = true;
+			}));
+			CreateMap<RemitenteResponseDto, Empresa>();
 
 
 		}

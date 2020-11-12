@@ -169,7 +169,7 @@ namespace Ekay.Api.Controllers
                         documentoA.NombreArchivo = Path.GetFileNameWithoutExtension(file.FileName);
                         documentoA.Tamanio = tamanio;
                         documentoA.Ruta = filePath;
-                        documentos.Add(documentoA);
+                        //documentos.Add(documentoA);
 
                     }
 

@@ -21,7 +21,7 @@ namespace Ekay.Application.Services
 		public async Task AddDocumento(Documento documento)
 		{
 			Expression<Func<Documento, bool>> exprDocumento = item => item.NombreArchivo == documento.NombreArchivo;
-			var animals = _unitOfWork.DocumentoRepository.FindByCondition(exprDocumento);
+			var documentos = _unitOfWork.DocumentoRepository.FindByCondition(exprDocumento);
 
 
 			//if (animals.Any(item => item.NombreArchivo == documento.NombreArchivo))
