@@ -144,6 +144,7 @@ namespace Ekay.Api.Controllers
             return Ok(response);
 
         }
+
         [HttpPut]
         public async Task<IActionResult> Put(int id,  [FromForm]List<IFormFile> files)
         {
@@ -169,7 +170,7 @@ namespace Ekay.Api.Controllers
                         documentoA.NombreArchivo = Path.GetFileNameWithoutExtension(file.FileName);
                         documentoA.Tamanio = tamanio;
                         documentoA.Ruta = filePath;
-                        //documentos.Add(documentoA);
+                        documentos.Add(documentoA);
 
                     }
 
@@ -194,22 +195,30 @@ namespace Ekay.Api.Controllers
             var response = new ApiResponse<bool>(true);
             return Ok(response);*/
 
-            
-            var documento = _mapper.Map<Documento>(documentoDto);
-            documento.Id = id;
-            //documento.UpdateAt = DateTime.Now;
-            //documento.UpdatedBy = 2;
-            documento.Extension = documentoA.Extension;
-            documento.NombreArchivo = documentoA.NombreArchivo;
-            documento.Tamanio = documentoA.Tamanio;
-            documento.Ruta = documentoA.Ruta;
-            _service.UpdateDocumento(documento);//aqui esta el error
-            //_service.SaveChanges();
 
-            var documentoresponseDto = _mapper.Map<Documento, DocumentoResponseDto>(documento);
-            var response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto); ;
+            try
+			{
+                var documento = _mapper.Map<Documento>(documentoDto);
+                documento.Id = id;
+                //documento.UpdateAt = DateTime.Now;
+                //documento.UpdatedBy = 2;
+                documento.Extension = documentoA.Extension;
+                documento.NombreArchivo = documentoA.NombreArchivo;
+                documento.Tamanio = documentoA.Tamanio;
+                documento.Ruta = documentoA.Ruta;
+                 await _service.UpdateDocumento(documento);//aqui esta el error
+                                                          //_service.SaveChanges();
 
-            return Ok(response);
+                var documentoresponseDto = _mapper.Map<Documento, DocumentoResponseDto>(documento);
+                var 
+                    response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto); ;
+            }
+        catch(Exception ex)
+			{
+                return BadRequest(ex.Message);
+            }
+
+            return Ok();
         }
     }
 }

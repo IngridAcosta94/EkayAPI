@@ -12,7 +12,7 @@ namespace Ekay.Domain.Interfaces
 		IEnumerable<Documento> GetDocumentos();
 		Task<Documento> GetDocumento(int id);
 		Task AddDocumento(Documento documento);
-		void UpdateDocumento(Documento documento);
+		Task UpdateDocumento(Documento documento);
 		Task DeleteDocumento(int id);
 
 

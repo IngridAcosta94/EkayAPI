@@ -57,7 +57,7 @@ namespace Ekay.Infraestructure.Repositories
 			//if (entity == null) throw new ArgumentNullException("Entity");
 			//if (entity.Id <= 0) throw new ArgumentNullException("Entity");
 			
-			 _entities.AddAsync(entity);
+			 _entities.Update(entity);
 		}
 	}
 }
