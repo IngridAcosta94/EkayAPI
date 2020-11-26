@@ -48,12 +48,12 @@ namespace Ekay.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(DocumentoRequestDto documentoDto   /*string Correo, string CorreoCop, string UrlFirma*/)
+        public async Task<IActionResult> Post(DocumentoRequestDto documentoDto ,[FromForm] List<IFormFile> files  /*string Correo, string CorreoCop, string UrlFirma*/)
 
         {
             //List < Documento > documentos = new List<Documento>();
 
-			/* System.Net.Mail.MailMessage mssg = new System.Net.Mail.MailMessage();
+            /* System.Net.Mail.MailMessage mssg = new System.Net.Mail.MailMessage();
 			 mssg.To.Add(Correo);
 			 mssg.Subject = "Firma Documento";
 			 mssg.SubjectEncoding = System.Text.Encoding.UTF8;
@@ -82,7 +82,7 @@ namespace Ekay.Api.Controllers
 				 // MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			 }*/
 
-			/*try
+            /*try
 			{
 
 
@@ -121,7 +121,46 @@ namespace Ekay.Api.Controllers
                 return BadRequest(ex.Message);
 			}*/
 
+            //DocumentoRequestDto documentoDto = new DocumentoRequestDto();
+            List<Documento> documentos = new List<Documento>();
+            Documento documentoA = new Documento();
+            try
+            {
+                if (files.Count > 0)
+                {
+                    foreach (var file in files)
+                    {
+                        var filePath = "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Archivos\\" + file.FileName;
+                        using (var stream = System.IO.File.Create(filePath))
+                        {
+                            await file.CopyToAsync(stream);
+                        }
+
+                        double tamanio = file.Length;
+                        tamanio = tamanio / 1000000;
+                        tamanio = Math.Round(tamanio, 2);
+                        documentoA.Extension = Path.GetExtension(file.FileName).Substring(1);
+                        documentoA.NombreArchivo = Path.GetFileNameWithoutExtension(file.FileName);
+                        documentoA.Tamanio = tamanio;
+                        documentoA.Ruta = filePath;
+                        documentos.Add(documentoA);
+
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+
             var documento = _mapper.Map<DocumentoRequestDto, Documento>(documentoDto);
+            documento.Extension = documentoA.Extension;
+            documento.NombreArchivo = documentoA.NombreArchivo;
+            documento.Tamanio = documentoA.Tamanio;
+            documento.Ruta = documentoA.Ruta;
             await _service.AddDocumento(documento);
             var documentoresponseDto = _mapper.Map<Documento, DocumentoResponseDto>(documento);
             var response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto);
@@ -144,6 +183,7 @@ namespace Ekay.Api.Controllers
             return Ok(response);
 
         }
+
         [HttpPut]
         public async Task<IActionResult> Put(int id,  [FromForm]List<IFormFile> files)
         {
@@ -169,7 +209,7 @@ namespace Ekay.Api.Controllers
                         documentoA.NombreArchivo = Path.GetFileNameWithoutExtension(file.FileName);
                         documentoA.Tamanio = tamanio;
                         documentoA.Ruta = filePath;
-                        //documentos.Add(documentoA);
+                        documentos.Add(documentoA);
 
                     }
 
@@ -194,22 +234,30 @@ namespace Ekay.Api.Controllers
             var response = new ApiResponse<bool>(true);
             return Ok(response);*/
 
-            
-            var documento = _mapper.Map<Documento>(documentoDto);
-            documento.Id = id;
-            //documento.UpdateAt = DateTime.Now;
-            //documento.UpdatedBy = 2;
-            documento.Extension = documentoA.Extension;
-            documento.NombreArchivo = documentoA.NombreArchivo;
-            documento.Tamanio = documentoA.Tamanio;
-            documento.Ruta = documentoA.Ruta;
-            _service.UpdateDocumento(documento);//aqui esta el error
-            //_service.SaveChanges();
 
-            var documentoresponseDto = _mapper.Map<Documento, DocumentoResponseDto>(documento);
-            var response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto); ;
+            try
+			{
+                var documento = _mapper.Map<Documento>(documentoDto);
+                documento.Id = id;
+                //documento.UpdateAt = DateTime.Now;
+                //documento.UpdatedBy = 2;
+                documento.Extension = documentoA.Extension;
+                documento.NombreArchivo = documentoA.NombreArchivo;
+                documento.Tamanio = documentoA.Tamanio;
+                documento.Ruta = documentoA.Ruta;
+                 await _service.UpdateDocumento(documento);//aqui esta el error
+                                                          //_service.SaveChanges();
 
-            return Ok(response);
+                var documentoresponseDto = _mapper.Map<Documento, DocumentoResponseDto>(documento);
+                var 
+                    response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto); ;
+            }
+        catch(Exception ex)
+			{
+                return BadRequest(ex.Message);
+            }
+
+            return Ok();
         }
     }
 }
