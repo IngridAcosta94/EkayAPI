@@ -1,13 +1,20 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "IUsMZFMTwtYN1lmqhWActtDtFLOdDpbfhAIdlwvbgwWB9+PDNZemaidc763KNrdeNTy275vOmneA4tM71tbcbg==",
+=======
+  "dgSpecHash": "UKrve2i1pLg3ORN0a2THel9jSpIoJ9Sf+QHe3bKG89sVi1+kyRUocjUFRR/J0BY3DvwCjBsX1FDesy9Mqt3xIA==",
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
   "success": true,
   "projectFilePath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Ekay.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ekt\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\ekt\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\ekt\\.nuget\\packages\\bouncycastle\\1.8.6.1\\bouncycastle.1.8.6.1.nupkg.sha512",
+<<<<<<< HEAD
     "C:\\Users\\ekt\\.nuget\\packages\\chilkat-x64\\9.5.0.84\\chilkat-x64.9.5.0.84.nupkg.sha512",
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
     "C:\\Users\\ekt\\.nuget\\packages\\fluentvalidation\\9.2.0\\fluentvalidation.9.2.0.nupkg.sha512",
     "C:\\Users\\ekt\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.2.0\\fluentvalidation.aspnetcore.9.2.0.nupkg.sha512",
     "C:\\Users\\ekt\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.2.0\\fluentvalidation.dependencyinjectionextensions.9.2.0.nupkg.sha512",
@@ -180,6 +187,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "El paquete \"chilkat-x64 9.5.0.84\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \".NETCoreApp,Version=v3.1\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "chilkat-x64",
       "targetGraphs": [
@@ -190,6 +198,8 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
       "message": "El paquete \"iTextSharp 5.5.13.2\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \".NETCoreApp,Version=v3.1\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "iTextSharp",
       "targetGraphs": [

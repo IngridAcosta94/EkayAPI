@@ -28,13 +28,19 @@
           "Ekay.Application": "1.0.0",
           "Ekay.Domain": "1.0.0",
           "Ekay.Infraestructure": "1.0.0",
+<<<<<<< HEAD
           "Microsoft.AspNetCore.Server.Kestrel.Core": "2.2.0",
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
           "Microsoft.Azure.KeyVault.WebKey": "3.0.5",
           "Microsoft.EntityFrameworkCore.Design": "3.1.9",
           "Microsoft.IdentityModel.Tokens": "6.8.0",
           "System.Security.Cryptography.Pkcs": "5.0.0",
           "System.Security.Cryptography.X509Certificates": "4.3.2",
+<<<<<<< HEAD
           "chilkat-x64": "9.5.0.84",
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
           "iTextSharp": "5.5.13.2",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -354,6 +360,7 @@
           "lib/BouncyCastle.Crypto.dll": {}
         }
       },
+<<<<<<< HEAD
       "chilkat-x64/9.5.0.84": {
         "runtime": {
           "lib/net461/ChilkatDotNet46.dll": {
@@ -365,6 +372,8 @@
           "lib/net461/ChilkatDotNet46.dll": {}
         }
       },
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
       "FluentValidation/9.2.0": {
         "runtime": {
           "lib/netstandard2.0/FluentValidation.dll": {
@@ -420,6 +429,7 @@
           "lib/itextsharp.dll": {}
         }
       },
+<<<<<<< HEAD
       "Microsoft.AspNetCore.Connections.Abstractions/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "2.2.0",
@@ -496,6 +506,8 @@
           "System.Text.Encodings.Web": "4.5.0"
         }
       },
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
       "Microsoft.Azure.KeyVault.WebKey/3.0.5": {
         "dependencies": {
           "Microsoft.Rest.ClientRuntime": "2.3.20",
@@ -1116,7 +1128,19 @@
           "System.Runtime": "4.3.0"
         }
       },
+<<<<<<< HEAD
       "System.Buffers/4.5.0": {},
+=======
+      "System.Buffers/4.3.0": {
+        "dependencies": {
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Diagnostics.Tracing": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Threading": "4.3.0"
+        }
+      },
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
       "System.Collections/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -1320,7 +1344,11 @@
       "System.IO.Compression/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
+<<<<<<< HEAD
           "System.Buffers": "4.5.0",
+=======
+          "System.Buffers": "4.3.0",
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.IO": "4.3.0",
@@ -1338,7 +1366,11 @@
       },
       "System.IO.Compression.ZipFile/4.3.0": {
         "dependencies": {
+<<<<<<< HEAD
           "System.Buffers": "4.5.0",
+=======
+          "System.Buffers": "4.3.0",
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
           "System.IO": "4.3.0",
           "System.IO.Compression": "4.3.0",
           "System.IO.FileSystem": "4.3.0",
@@ -1397,7 +1429,10 @@
           "System.Threading": "4.3.0"
         }
       },
+<<<<<<< HEAD
       "System.Memory/4.5.1": {},
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
       "System.Net.Http/4.3.4": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -1464,7 +1499,10 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
+<<<<<<< HEAD
       "System.Numerics.Vectors/4.5.0": {},
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
       "System.ObjectModel/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -1627,6 +1665,7 @@
         }
       },
       "System.Runtime.Numerics/4.3.0": {
+<<<<<<< HEAD
         "dependencies": {
           "System.Globalization": "4.3.0",
           "System.Resources.ResourceManager": "4.3.0",
@@ -1662,6 +1701,123 @@
           "System.Security.Principal.Windows": "4.5.0"
         }
       },
+      "System.Security.Cryptography.Algorithms/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "System.Collections": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.Handles": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Runtime.Numerics": "4.3.0",
+          "System.Security.Cryptography.Encoding": "4.3.0",
+          "System.Security.Cryptography.Primitives": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "runtime.native.System.Security.Cryptography.Apple": "4.3.0",
+          "runtime.native.System.Security.Cryptography.OpenSsl": "4.3.2"
+        }
+      },
+      "System.Security.Cryptography.Cng/5.0.0": {
+        "dependencies": {
+          "System.Formats.Asn1": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "compile": {
+          "ref/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Csp/4.3.0": {
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "System.IO": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.Handles": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Security.Cryptography.Encoding": "4.3.0",
+          "System.Security.Cryptography.Primitives": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Threading": "4.3.0"
+        }
+      },
+      "System.Security.Cryptography.Encoding/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.Handles": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Security.Cryptography.Primitives": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "runtime.native.System.Security.Cryptography.OpenSsl": "4.3.2"
+        }
+      },
+      "System.Security.Cryptography.OpenSsl/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.Handles": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Runtime.Numerics": "4.3.0",
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Security.Cryptography.Encoding": "4.3.0",
+          "System.Security.Cryptography.Primitives": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "runtime.native.System.Security.Cryptography.OpenSsl": "4.3.2"
+        }
+      },
+      "System.Security.Cryptography.Pkcs/5.0.0": {
+        "dependencies": {
+          "System.Formats.Asn1": "5.0.0",
+          "System.Security.Cryptography.Cng": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Security.Cryptography.Pkcs.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.0/System.Security.Cryptography.Pkcs.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "compile": {
+          "ref/netcoreapp3.0/System.Security.Cryptography.Pkcs.dll": {}
+        }
+      },
+<<<<<<< HEAD
+=======
       "System.Security.Cryptography.Algorithms/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -1775,6 +1931,7 @@
           "ref/netcoreapp3.0/System.Security.Cryptography.Pkcs.dll": {}
         }
       },
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
       "System.Security.Cryptography.Primitives/4.3.0": {
         "dependencies": {
           "System.Diagnostics.Debug": "4.3.0",
@@ -1894,6 +2051,13 @@
         }
       },
       "System.Threading.Tasks.Extensions/4.5.1": {},
+      "System.Threading.Timer/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
       "System.Threading.Timer/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -3641,6 +3805,7 @@
       "path": "bouncycastle/1.8.6.1",
       "hashPath": "bouncycastle.1.8.6.1.nupkg.sha512"
     },
+<<<<<<< HEAD
     "chilkat-x64/9.5.0.84": {
       "type": "package",
       "serviceable": true,
@@ -3648,6 +3813,8 @@
       "path": "chilkat-x64/9.5.0.84",
       "hashPath": "chilkat-x64.9.5.0.84.nupkg.sha512"
     },
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
     "FluentValidation/9.2.0": {
       "type": "package",
       "serviceable": true,
@@ -3676,6 +3843,7 @@
       "path": "itextsharp/5.5.13.2",
       "hashPath": "itextsharp.5.5.13.2.nupkg.sha512"
     },
+<<<<<<< HEAD
     "Microsoft.AspNetCore.Connections.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -3739,6 +3907,8 @@
       "path": "microsoft.aspnetcore.webutilities/2.2.0",
       "hashPath": "microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512"
     },
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
     "Microsoft.Azure.KeyVault.WebKey/3.0.5": {
       "type": "package",
       "serviceable": true,
@@ -3955,6 +4125,7 @@
       "sha512": "sha512-gTqzsGcmD13HgtNePPcuVHZ/NXWmyV+InJgalW/FhWpII1D7V1k0obIseGlWMeA4G+tZfeGMfXr0klnWbMR/mQ==",
       "path": "microsoft.identitymodel.tokens/6.8.0",
       "hashPath": "microsoft.identitymodel.tokens.6.8.0.nupkg.sha512"
+<<<<<<< HEAD
     },
     "Microsoft.Net.Http.Headers/2.2.0": {
       "type": "package",
@@ -3962,6 +4133,8 @@
       "sha512": "sha512-iZNkjYqlo8sIOI0bQfpsSoMTmB/kyvmV2h225ihyZT33aTp48ZpF6qYnXxzSXmHt8DpBAwBTX+1s1UFLbYfZKg==",
       "path": "microsoft.net.http.headers/2.2.0",
       "hashPath": "microsoft.net.http.headers.2.2.0.nupkg.sha512"
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
     },
     "Microsoft.NETCore.Platforms/2.0.0": {
       "type": "package",
@@ -4166,12 +4339,21 @@
       "path": "system.appcontext/4.3.0",
       "hashPath": "system.appcontext.4.3.0.nupkg.sha512"
     },
+<<<<<<< HEAD
     "System.Buffers/4.5.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
       "path": "system.buffers/4.5.0",
       "hashPath": "system.buffers.4.5.0.nupkg.sha512"
+=======
+    "System.Buffers/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ratu44uTIHgeBeI0dE8DWvmXVBSo4u7ozRZZHOMmK/JPpYyo0dAfgSiHlpiObMQ5lEtEyIXA40sKRYg5J6A8uQ==",
+      "path": "system.buffers/4.3.0",
+      "hashPath": "system.buffers.4.3.0.nupkg.sha512"
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
     },
     "System.Collections/4.3.0": {
       "type": "package",
@@ -4369,6 +4551,7 @@
       "path": "system.linq.expressions/4.3.0",
       "hashPath": "system.linq.expressions.4.3.0.nupkg.sha512"
     },
+<<<<<<< HEAD
     "System.Memory/4.5.1": {
       "type": "package",
       "serviceable": true,
@@ -4376,6 +4559,8 @@
       "path": "system.memory/4.5.1",
       "hashPath": "system.memory.4.5.1.nupkg.sha512"
     },
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
     "System.Net.Http/4.3.4": {
       "type": "package",
       "serviceable": true,
@@ -4404,6 +4589,7 @@
       "path": "system.net.sockets/4.3.0",
       "hashPath": "system.net.sockets.4.3.0.nupkg.sha512"
     },
+<<<<<<< HEAD
     "System.Numerics.Vectors/4.5.0": {
       "type": "package",
       "serviceable": true,
@@ -4411,6 +4597,8 @@
       "path": "system.numerics.vectors/4.5.0",
       "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
     },
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
     "System.ObjectModel/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -4704,6 +4892,13 @@
       "sha512": "sha512-WSKUTtLhPR8gllzIWO2x6l4lmAIfbyMAiTlyXAis4QBDonXK4b4S6F8zGARX4/P8wH3DH+sLdhamCiHn+fTU1A==",
       "path": "system.threading.tasks.extensions/4.5.1",
       "hashPath": "system.threading.tasks.extensions.4.5.1.nupkg.sha512"
+    },
+    "System.Threading.Timer/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Z6YfyYTCg7lOZjJzBjONJTFKGN9/NIYKSxhU5GRd+DTwHSZyvWp1xuI5aR+dLg+ayyC5Xv57KiY4oJ0tMO89fQ==",
+      "path": "system.threading.timer/4.3.0",
+      "hashPath": "system.threading.timer.4.3.0.nupkg.sha512"
     },
     "System.Threading.Timer/4.3.0": {
       "type": "package",
