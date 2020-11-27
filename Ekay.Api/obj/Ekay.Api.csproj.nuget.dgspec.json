@@ -78,9 +78,22 @@
               "target": "Package",
               "version": "[4.3.2, )"
             },
+<<<<<<< HEAD
             "chilkat-x64": {
               "target": "Package",
               "version": "[9.5.0.84, )"
+=======
+<<<<<<< HEAD
+            "chilkat-x64": {
+              "target": "Package",
+              "version": "[9.5.0.84, )"
+            },
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.2, )"
+>>>>>>> c2287a7da2e0d30b6aaa17dc191390dfee4592bd
             }
           },
           "imports": [

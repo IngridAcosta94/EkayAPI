@@ -68,6 +68,11 @@ C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\FluentValidation
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\Ekay.Application.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\Ekay.Application.pdb
+<<<<<<< HEAD
+=======
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\itextsharp.dll
+>>>>>>> c2287a7da2e0d30b6aaa17dc191390dfee4592bd
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\System.Formats.Asn1.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Cng.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Cng.dll
@@ -76,6 +81,7 @@ C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\Microsoft.Azure.KeyVault.WebKey.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\Microsoft.Rest.ClientRuntime.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\Microsoft.Rest.ClientRuntime.Azure.dll
+<<<<<<< HEAD
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\ChilkatDotNet46.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
@@ -83,3 +89,13 @@ C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\itextsharp.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\obj\Debug\netcoreapp3.1\Ekay.Api.csproj.CoreCompileInputs.cache
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\obj\Debug\netcoreapp3.1\Ekay.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\obj\Debug\netcoreapp3.1\Ekay.Api.MvcApplicationPartsAssemblyInfo.cache
+=======
+<<<<<<< HEAD
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\ChilkatDotNet46.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\obj\Debug\netcoreapp3.1\Ekay.Api.csproj.CoreCompileInputs.cache
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\obj\Debug\netcoreapp3.1\Ekay.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\obj\Debug\netcoreapp3.1\Ekay.Api.MvcApplicationPartsAssemblyInfo.cache
+=======
+>>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
+>>>>>>> c2287a7da2e0d30b6aaa17dc191390dfee4592bd

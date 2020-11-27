@@ -241,6 +241,7 @@ namespace Ekay.Api.Controllers
 			{
                 var documento = _mapper.Map<Documento>(documentoDto);
                 documento.Id = id;
+<<<<<<< HEAD
                 documento.FechaCreacion = fechaCreacion;
                 documento.Contenido = contenido;
                 documento.AutorId = autorId;
@@ -249,6 +250,10 @@ namespace Ekay.Api.Controllers
                 documento.TipoDocId = tipoDocId;
                 documento.UpdateAt = DateTime.Now;
                 documento.UpdatedBy = 2;
+=======
+                //documento.UpdateAt = DateTime.Now;
+                //documento.UpdatedBy = 2;
+>>>>>>> c2287a7da2e0d30b6aaa17dc191390dfee4592bd
                 documento.Extension = documentoA.Extension;
                 documento.NombreArchivo = documentoA.NombreArchivo;
                 documento.Tamanio = documentoA.Tamanio;

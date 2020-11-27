@@ -62,6 +62,7 @@ namespace Ekay.Application.Services
 		
 		public async Task UpdateDocumento(Documento documento)//aqui esta el error
 		{
+<<<<<<< HEAD
 			var docto = await _unitOfWork.DocumentoRepository.GetById(documento.Id);
 			docto.FechaCreacion = documento.FechaCreacion;
 			docto.Contenido = documento.Contenido;
@@ -73,6 +74,13 @@ namespace Ekay.Application.Services
 			docto.Tamanio = documento.Tamanio;
 			docto.Extension = documento.Extension;
 			docto.Ruta = documento.Ruta;
+=======
+			//var docto = await _unitOfWork.DocumentoRepository.GetById(documento.Id);
+			//docto.NombreArchivo = documento.NombreArchivo;
+			//docto.Tamanio = documento.Tamanio;
+			//docto.Extension = documento.Extension;
+			//docto.Ruta = documento.Ruta;
+>>>>>>> c2287a7da2e0d30b6aaa17dc191390dfee4592bd
 			_unitOfWork.DocumentoRepository.Update(documento);
 			await _unitOfWork.SaveChangesAsync();
 
