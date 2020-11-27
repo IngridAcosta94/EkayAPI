@@ -58,12 +58,42 @@ namespace Ekay.Application.Services
 			return  _unitOfWork.DocumentoRepository.GetAll();
 		}
 
-		public void UpdateDocumento(Documento documento)//aqui esta el erro
+		
+		
+		public async Task UpdateDocumento(Documento documento)//aqui esta el error
 		{
-			 _unitOfWork.DocumentoRepository.Update(documento);
-			 _unitOfWork.SaveChangesAsync();
+			var docto = await _unitOfWork.DocumentoRepository.GetById(documento.Id);
+			docto.FechaCreacion = documento.FechaCreacion;
+			docto.Contenido = documento.Contenido;
+			docto.AutorId = documento.AutorId;
+			docto.CarpetaId = documento.CarpetaId;
+			docto.RemitenteId = documento.RemitenteId;
+			docto.TipoDocId = documento.TipoDocId;
+			docto.NombreArchivo = documento.NombreArchivo;
+			docto.Tamanio = documento.Tamanio;
+			docto.Extension = documento.Extension;
+			docto.Ruta = documento.Ruta;
+			_unitOfWork.DocumentoRepository.Update(documento);
+			await _unitOfWork.SaveChangesAsync();
 
 		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		/*public async Task AddDocumento(Documento documento)
 		{
