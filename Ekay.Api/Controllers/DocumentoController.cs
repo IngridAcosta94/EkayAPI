@@ -32,7 +32,7 @@ namespace Ekay.Api.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public IActionResult Get()
         {
             var documentos =  _service.GetDocumentos();
             var DocumentosDto = _mapper.Map<IEnumerable<Documento>, IEnumerable<DocumentoResponseDto>>(documentos);
@@ -124,45 +124,9 @@ namespace Ekay.Api.Controllers
 			}*/
 
             //DocumentoRequestDto documentoDto = new DocumentoRequestDto();
-            List<Documento> documentos = new List<Documento>();
-            Documento documentoA = new Documento();
-            try
-            {
-                if (files.Count > 0)
-                {
-                    foreach (var file in files)
-                    {
-                        var filePath = "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Archivos\\" + file.FileName;
-                        using (var stream = System.IO.File.Create(filePath))
-                        {
-                            await file.CopyToAsync(stream);
-                        }
-
-                        double tamanio = file.Length;
-                        tamanio = tamanio / 1000000;
-                        tamanio = Math.Round(tamanio, 2);
-                        documentoA.Extension = Path.GetExtension(file.FileName).Substring(1);
-                        documentoA.NombreArchivo = Path.GetFileNameWithoutExtension(file.FileName);
-                        documentoA.Tamanio = tamanio;
-                        documentoA.Ruta = filePath;
-                        documentos.Add(documentoA);
-
-                    }
-
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-
+            
 
             var documento = _mapper.Map<DocumentoRequestDto, Documento>(documentoDto);
-            documento.Extension = documentoA.Extension;
-            documento.NombreArchivo = documentoA.NombreArchivo;
-            documento.Tamanio = documentoA.Tamanio;
-            documento.Ruta = documentoA.Ruta;
             await _service.AddDocumento(documento);
             var documentoresponseDto = _mapper.Map<Documento, DocumentoResponseDto>(documento);
             var response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto);
@@ -208,12 +172,22 @@ namespace Ekay.Api.Controllers
                         tamanio = tamanio / 1000000;
                         tamanio = Math.Round(tamanio, 2);
                         documentoA.Extension = Path.GetExtension(file.FileName).Substring(1);
-                        documentoA.NombreArchivo = Path.GetFileNameWithoutExtension(file.FileName);
+                        documentoA.NombreArchivo = Path.GetFileNameWithoutExtension(file.FileName.Trim());
                         documentoA.Tamanio = tamanio;
                         documentoA.Ruta = filePath;
                         documentos.Add(documentoA);
 
+
+
+                        byte[] bytes = System.IO.File.ReadAllBytes(filePath);
+                        string filed = Convert.ToBase64String(bytes);//AQUI ESTA EL ERROR
+                        var filePath2 = "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Archivos\\" + Path.GetFileNameWithoutExtension(file.FileName.Trim()) + ".txt";
+                        //var stream2 = System.IO.File.Create(filePath2) ;
+                        System.IO.File.WriteAllText(filePath2, filed);
+                        documentoA.RutaBase = filePath2;
+                        
                     }
+
 
 
                 }
@@ -241,40 +215,38 @@ namespace Ekay.Api.Controllers
 			{
                 var documento = _mapper.Map<Documento>(documentoDto);
                 documento.Id = id;
-<<<<<<< HEAD
-                documento.FechaCreacion = fechaCreacion;
+                /*documento.FechaCreacion = fechaCreacion;
                 documento.Contenido = contenido;
                 documento.AutorId = autorId;
                 documento.CarpetaId = carpetaId;
                 documento.RemitenteId = carpetaId;
                 documento.TipoDocId = tipoDocId;
                 documento.UpdateAt = DateTime.Now;
-                documento.UpdatedBy = 2;
-=======
-                //documento.UpdateAt = DateTime.Now;
-                //documento.UpdatedBy = 2;
->>>>>>> c2287a7da2e0d30b6aaa17dc191390dfee4592bd
+                documento.UpdatedBy = 2;*/
                 documento.Extension = documentoA.Extension;
                 documento.NombreArchivo = documentoA.NombreArchivo;
                 documento.Tamanio = documentoA.Tamanio;
                 documento.Ruta = documentoA.Ruta;
-                 await _service.UpdateDocumento(documento);//aqui esta el error
+                documento.RutaBase = documentoA.RutaBase;
+                await _service.UpdateDocumento(documento);//aqui esta el error
                                                           //_service.SaveChanges();
 
                 var documentoresponseDto = _mapper.Map<Documento, DocumentoResponseDto>(documento);
                 var 
-                    response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto); ;
+                response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto);
+
+                return Ok(response);
             }
         catch(Exception ex)
 			{
                 return BadRequest(ex.Message);
             }
 
-            return Ok();
+           
         }
 
 
-        //POST: CIFRADO
+        /*//POST: CIFRADO
         [HttpPost]
         [Route("prueba")]
         public ActionResult CifrarArchivo([FromForm] List<IFormFile> file)
@@ -293,7 +265,7 @@ namespace Ekay.Api.Controllers
             }
             
             return Ok(cifradito.ToString());
-		}
+		}*/
 
 
 

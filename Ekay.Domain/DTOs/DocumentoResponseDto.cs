@@ -21,6 +21,8 @@ namespace Ekay.Domain.DTOs
         public string Extension { get; set; }
         public double Tamanio { get; set; }
         public string Ruta { get; set; }
+        public string RutaBase { get; set; }
+        public string Certificado { get; set; }
 
 
 

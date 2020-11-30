@@ -1,7 +1,6 @@
 C:\Users\ekt\source\repos\Ekay\Ekay.Domain\bin\Debug\netcoreapp3.1\Ekay.Domain.deps.json
 C:\Users\ekt\source\repos\Ekay\Ekay.Domain\bin\Debug\netcoreapp3.1\Ekay.Domain.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Domain\bin\Debug\netcoreapp3.1\Ekay.Domain.pdb
-C:\Users\ekt\source\repos\Ekay\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.csprojAssemblyReference.cache
 C:\Users\ekt\source\repos\Ekay\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.AssemblyInfoInputs.cache
 C:\Users\ekt\source\repos\Ekay\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.AssemblyInfo.cs
 C:\Users\ekt\source\repos\Ekay\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.dll
@@ -10,3 +9,4 @@ C:\Users\ekt\source\repos\Ekay\Ekay.Domain\bin\Debug\netcoreapp3.1\Ekay.Domain.r
 C:\Users\ekt\source\repos\Ekay\Ekay.Domain\bin\Debug\netcoreapp3.1\Ekay.Domain.runtimeconfig.dev.json
 C:\Users\ekt\source\repos\Ekay\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.genruntimeconfig.cache
 C:\Users\ekt\source\repos\Ekay\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ekt\source\repos\Ekay\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.csprojAssemblyReference.cache

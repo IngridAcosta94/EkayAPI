@@ -25,9 +25,13 @@ namespace Ekay.Domain.Entities
 		public string Extension { get; set; }
 		public double Tamanio { get; set; }
 		public string Ruta { get; set; }
+        public string RutaBase { get; set; }
+        public string Certificado { get; set; }
 
 
-		public virtual Autor Autor { get; set; }
+
+
+        public virtual Autor Autor { get; set; }
         public virtual Carpeta Carpeta { get; set; }
         public virtual Remitente Remitente { get; set; }
         public virtual TipoDocumento TipoDoc { get; set; }

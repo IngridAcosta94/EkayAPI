@@ -5,16 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="obj1\**" />
+    <Content Remove="obj1\**" />
+    <EmbeddedResource Remove="obj1\**" />
+    <None Remove="obj1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
-<<<<<<< HEAD
     <PackageReference Include="chilkat-x64" Version="9.5.0.84" />
-=======
-<<<<<<< HEAD
     <PackageReference Include="chilkat-x64" Version="9.5.0.84" />
-=======
->>>>>>> 7b2bf63d452322e1d837b0fa5133e052de11c9aa
+
+
     <PackageReference Include="iTextSharp" Version="5.5.13.2" />
->>>>>>> c2287a7da2e0d30b6aaa17dc191390dfee4592bd
+
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel.Core" Version="2.2.0" />
     <PackageReference Include="Microsoft.Azure.KeyVault.WebKey" Version="3.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">

@@ -15,20 +15,13 @@ namespace Ekay.Application.Services
 {
     public class CifradoService
     {
-        public string Encode(string strFileTarget)
+       /* public string Encode(string strFileTarget)
         {
             string strEncoded = strFileTarget;
             byte[] archivobyte = File.ReadAllBytes(strEncoded);
             string archivoBase64 = Convert.ToBase64String(archivobyte);
 
 
-            /*using (FileStream fs = new FileStream(strFileTarget, FileMode.Open, FileAccess.Read))
-            {
-                byte[] filebytes = new byte[fs.Length];
-
-                fs.Read(filebytes, 0, Convert.ToInt32(fs.Length));
-                strEncoded = Convert.ToBase64String(filebytes, Base64FormattingOptions.InsertLineBreaks);
-            }*/
             return archivoBase64;
         }
         public void Decode(string strFileTarget, string strEncoded)
@@ -40,7 +33,7 @@ namespace Ekay.Application.Services
                 stmFile.Write(arrBytFilebytes, 0, arrBytFilebytes.Length);
                 stmFile.Close();
             }
-        }
+        }*/
     }
     /// <summary>
     /// Helper para el firmado de PDFs con la librería iTextSharp
