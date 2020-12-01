@@ -151,7 +151,7 @@ namespace Ekay.Api.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put(int id, DateTime fechaCreacion,string contenido, int autorId, int carpetaId, int remitenteId, int tipoDocId, [FromForm]List<IFormFile> files)
+        public async Task<IActionResult> Put(int id, [FromForm]List<IFormFile> files)
         {
             DocumentoRequestDto documentoDto = new DocumentoRequestDto();
             List<Documento> documentos = new List<Documento>();
@@ -175,17 +175,17 @@ namespace Ekay.Api.Controllers
                         documentoA.NombreArchivo = Path.GetFileNameWithoutExtension(file.FileName.Trim());
                         documentoA.Tamanio = tamanio;
                         documentoA.Ruta = filePath;
-                        documentos.Add(documentoA);
 
 
 
                         byte[] bytes = System.IO.File.ReadAllBytes(filePath);
-                        string filed = Convert.ToBase64String(bytes);//AQUI ESTA EL ERROR
+                        string filed = Convert.ToBase64String(bytes);
                         var filePath2 = "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Archivos\\" + Path.GetFileNameWithoutExtension(file.FileName.Trim()) + ".txt";
                         //var stream2 = System.IO.File.Create(filePath2) ;
                         System.IO.File.WriteAllText(filePath2, filed);
                         documentoA.RutaBase = filePath2;
-                        
+                        documentos.Add(documentoA);
+
                     }
 
 
@@ -196,20 +196,6 @@ namespace Ekay.Api.Controllers
             {
                 return BadRequest(ex.Message);
             }
-
-
-           /* var documento1 = _mapper.Map<Documento>(documentoDto);
-            documento1.Id = id;
-            //animal.UpdateAt = DateTime.Now;
-            //animal.UpdatedBy = 2;
-            documento1.Extension = documentoA.Extension;
-            documento1.NombreArchivo = documentoA.NombreArchivo;
-            documento1.Tamanio = documentoA.Tamanio;
-            documento1.Ruta = documentoA.Ruta;
-            _service.UpdateDocumento(documento1);
-            var response = new ApiResponse<bool>(true);
-            return Ok(response);*/
-
 
             try
 			{
@@ -228,13 +214,11 @@ namespace Ekay.Api.Controllers
                 documento.Tamanio = documentoA.Tamanio;
                 documento.Ruta = documentoA.Ruta;
                 documento.RutaBase = documentoA.RutaBase;
-                await _service.UpdateDocumento(documento);//aqui esta el error
-                                                          //_service.SaveChanges();
+                await _service.UpdateDocumento(documento);
 
                 var documentoresponseDto = _mapper.Map<Documento, DocumentoResponseDto>(documento);
-                var 
-                response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto);
-
+                var response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto);// aqui esta el error
+                                                         
                 return Ok(response);
             }
         catch(Exception ex)
@@ -246,77 +230,7 @@ namespace Ekay.Api.Controllers
         }
 
 
-        /*//POST: CIFRADO
-        [HttpPost]
-        [Route("prueba")]
-        public ActionResult CifrarArchivo([FromForm] List<IFormFile> file)
-		{
-
-            CifradoService cifrado = new CifradoService();
-            var filePath = "";
-            string cifradito="";
-
-            foreach (var files in file)
-            {
-                files.OpenReadStream();
-                //filePath = "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Archivos\\" + files.FileName;
-                string nombre = files.FileName;
-                cifradito = cifrado.Encode(nombre);
-            }
-            
-            return Ok(cifradito.ToString());
-		}*/
-
-
-
-        /*
-        // POST: CifrarArchivo
-        [HttpPost]
-        [Route("api/prueba")]
-        public ActionResult CifrarArchivo([FromForm] List<IFormFile> cer,
-               [FromForm] List<IFormFile> key, [FromForm] List<IFormFile> files)
-        {
-            //Mapea la carpeta especificada.
-            //String rute = Server.MapPath("~/Files");
-            var filePath ="";
-            var filePath2 = "";
-            var filePath3= "";
-            string texto = string.Empty;
-            string publica = string.Empty;
-            string privada = string.Empty;
-
-            foreach (var file in files)
-            {
-                filePath = "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Archivos\\" + file.FileName + ".txt";
-                texto = filePath.ToString(); 
-            }
-            foreach (var file in cer)
-            {
-                filePath2 = "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Archivos\\" + file.FileName + ".txt";
-                publica = file.FileName;
-            }
-            foreach (var file in key)
-            {
-                filePath3 = "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Archivos\\" + file.FileName + ".txt";
-                privada = file.FileName;
-            }
-
-            //Juntamos la carpeta mapeada + el nombre del archivo + 
-            //.txt
-            String path = Path.Combine(filePath);
-
-            //Guardamos la clave Pública en una sesión para no tener 
-            //que volver a preguntarla.
-            
-            //Llamamos a los metodos de Crypt para poder realizar el 
-            //cifrado del archivo.
-            CifradoService.encryptToFile(texto, path, CifradoService.EncodingPrivateKey(privada), CifradoService.EncodingPublicKey(publica));
-            string prueba = CifradoService.decryptFromFile(path, CifradoService.EncodingPrivateKey(privada),CifradoService.EncodingPublicKey( publica));
-            //Redireccionamos a la View que permite descifrar el 
-            //archivo.
-
-            return Ok(prueba);
-        }*/
+       
         
     }
 }

@@ -70,7 +70,6 @@ namespace Ekay.Application.Services
 			docto.CarpetaId = documento.CarpetaId;
 			docto.RemitenteId = documento.RemitenteId;
 			docto.TipoDocId = documento.TipoDocId;*/
-
 			docto.NombreArchivo = documento.NombreArchivo;
 			docto.Tamanio = documento.Tamanio;
 			docto.Extension = documento.Extension;

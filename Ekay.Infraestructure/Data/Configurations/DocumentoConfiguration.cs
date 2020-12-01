@@ -67,10 +67,22 @@ namespace Ekay.Infraestructure.Data.Configurations
                .HasMaxLength(500)
                .IsUnicode(false);
              
-            builder.Property(e => e.Extension)
-               .HasColumnName("Extension")
+            builder.Property(e => e.Ruta)
+               .HasColumnName("Ruta")
                .HasMaxLength(500)
                .IsUnicode(false);
+
+            builder.Property(e => e.RutaBase)
+               .HasColumnName("RutaBase")
+               .HasMaxLength(500)
+               .IsUnicode(false);
+
+            builder.Property(e => e.Certificado)
+              .HasColumnName("Certificado")
+              .HasMaxLength(500)
+              .IsUnicode(false);
+
+
 
             builder.Ignore(e => e.CreateAt);
             builder.Ignore(e => e.CreatedBy);
