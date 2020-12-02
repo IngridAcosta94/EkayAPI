@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Ekay.Application.Services
 {
-	class CarpetaService : ICarpetaService
+	public class CarpetaService : ICarpetaService
 	{
 		private readonly IUnitOfWork _unitOfWork;
 		public CarpetaService(IUnitOfWork unitOfWork)
@@ -47,12 +47,12 @@ namespace Ekay.Application.Services
 			await _unitOfWork.SaveChangesAsync();
 		}
 
-		public async Task<Carpeta> Getcarpeta(int id)
+		public async Task<Carpeta> GetCarpeta(int id)
 		{
 			return await _unitOfWork.CarpetaRepository.GetById(id);
 		}
 
-		public IEnumerable<Carpeta> Getcarpetas()
+		public IEnumerable<Carpeta> GetCarpetas()
 		{
 			return _unitOfWork.CarpetaRepository.GetAll();
 		}

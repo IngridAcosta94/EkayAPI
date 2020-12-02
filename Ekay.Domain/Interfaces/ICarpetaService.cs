@@ -8,8 +8,8 @@ namespace Ekay.Domain.Interfaces
 {
 	public interface ICarpetaService
 	{
-		IEnumerable<Carpeta> Getcarpetas();
-		Task<Carpeta> Getcarpeta(int id);
+		IEnumerable<Carpeta> GetCarpetas();
+		Task<Carpeta> GetCarpeta(int id);
 		Task AddCarpeta(Carpeta carpeta);
 		void UpdateCarpeta(Carpeta carpeta);
 		Task DeleteCarpeta(int id);

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Ekay.Application.Services
 {
-	class CuentaService : ICuentaService
+	public class CuentaService : ICuentaService
 	{
 		private readonly IUnitOfWork _unitOfWork;
 		public CuentaService(IUnitOfWork unitOfWork)

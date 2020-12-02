@@ -74,7 +74,7 @@ namespace AnimalSpawn.Application.Mappings
 				destination.CreatedBy = 3;
 				//destination.Status = true;
 			}));
-			CreateMap<CuentaResponseDto, Cuenta>();
+			CreateMap<RemitenteResponseDto, Remitente>();
 
 			CreateMap<Cuenta, CuentaRequestDto>();
 			CreateMap<Cuenta, CuentaResponseDto>();

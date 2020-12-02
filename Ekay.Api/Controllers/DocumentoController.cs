@@ -219,6 +219,9 @@ namespace Ekay.Api.Controllers
                 var documentoresponseDto = _mapper.Map<Documento, DocumentoResponseDto>(documento);
                 var response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto);// aqui esta el error
                                                          
+
+
+                
                 return Ok(response);
             }
         catch(Exception ex)

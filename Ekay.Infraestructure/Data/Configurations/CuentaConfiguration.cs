@@ -17,7 +17,7 @@ namespace Ekay.Infraestructure.Data.Configurations
             
             
               
-            builder.Property(e => e.Contraseña)
+            builder.Property(e => e.Contrasenia)
                     .HasMaxLength(50)
                     .IsUnicode(false);
 

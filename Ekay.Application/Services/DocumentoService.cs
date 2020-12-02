@@ -82,7 +82,8 @@ namespace Ekay.Application.Services
 			//docto.Extension = documento.Extension;
 			//docto.Ruta = documento.Ruta;
 
-			_unitOfWork.DocumentoRepository.Update(documento);
+			_unitOfWork.DocumentoRepository.Update(docto)
+				;
 			await _unitOfWork.SaveChangesAsync();
 
 		}
