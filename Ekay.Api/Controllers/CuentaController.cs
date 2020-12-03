@@ -47,9 +47,10 @@ namespace Ekay.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(int id, CuentaRequestDto cuentaDto)
+        public async Task<IActionResult> Post( [FromForm] CuentaRequestDto cuentaDto)
 
         {
+
             var cuenta = _mapper.Map<CuentaRequestDto, Cuenta>(cuentaDto);
             await _service.AddCuenta(cuenta);
             var cuentaresponseDto = _mapper.Map<Cuenta, CuentaResponseDto>(cuenta);
