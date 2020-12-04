@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "2rMgAmQH9k6q0wZf8BFebdHv/Uf7MaypM0+WVbXTmi3YQsQY42UDKndBJK9GTi8A1CttECp+GPDuKhFTJ+aywQ==",
+  "dgSpecHash": "z2IJf4EHQM+XJwgaAxbENP9PrVvm5e7LaT3JRWsZJD6v9xloZmHYrGC5sjsXXKY2+DlPGNfoLx3sDEGapy79qA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Application\\Ekay.Application.csproj",
+  "projectFilePath": "C:\\Users\\dioni\\Desktop\\EkayAPI\\Ekay.Application\\Ekay.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ekt\\.nuget\\packages\\bouncycastle\\1.8.6.1\\bouncycastle.1.8.6.1.nupkg.sha512",
-    "C:\\Users\\ekt\\.nuget\\packages\\itextsharp\\5.5.13.2\\itextsharp.5.5.13.2.nupkg.sha512",
-    "C:\\Users\\ekt\\.nuget\\packages\\system.formats.asn1\\5.0.0\\system.formats.asn1.5.0.0.nupkg.sha512",
-    "C:\\Users\\ekt\\.nuget\\packages\\system.security.cryptography.cng\\5.0.0\\system.security.cryptography.cng.5.0.0.nupkg.sha512",
-    "C:\\Users\\ekt\\.nuget\\packages\\system.security.cryptography.pkcs\\5.0.0\\system.security.cryptography.pkcs.5.0.0.nupkg.sha512"
+    "C:\\Users\\dioni\\.nuget\\packages\\bouncycastle\\1.8.6.1\\bouncycastle.1.8.6.1.nupkg.sha512",
+    "C:\\Users\\dioni\\.nuget\\packages\\itextsharp\\5.5.13.2\\itextsharp.5.5.13.2.nupkg.sha512",
+    "C:\\Users\\dioni\\.nuget\\packages\\system.formats.asn1\\5.0.0\\system.formats.asn1.5.0.0.nupkg.sha512",
+    "C:\\Users\\dioni\\.nuget\\packages\\system.security.cryptography.cng\\5.0.0\\system.security.cryptography.cng.5.0.0.nupkg.sha512",
+    "C:\\Users\\dioni\\.nuget\\packages\\system.security.cryptography.pkcs\\5.0.0\\system.security.cryptography.pkcs.5.0.0.nupkg.sha512"
   ],
   "logs": [
     {

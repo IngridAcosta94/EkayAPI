@@ -47,7 +47,7 @@ namespace Ekay.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(int id ,EmpresaRequestDto empresaDto  )
+        public async Task<IActionResult> Post( [FromForm] EmpresaRequestDto empresaDto  )
 
         {
             var empresa = _mapper.Map<EmpresaRequestDto, Empresa>(empresaDto);

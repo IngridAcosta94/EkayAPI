@@ -50,7 +50,7 @@ namespace Ekay.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(DocumentoRequestDto documentoDto ,[FromForm] List<IFormFile> files  /*string Correo, string CorreoCop, string UrlFirma*/)
+        public async Task<IActionResult> Post([FromForm]DocumentoRequestDto documentoDto ,[FromForm] List<IFormFile> files  /*string Correo, string CorreoCop, string UrlFirma*/)
 
         {
             //List < Documento > documentos = new List<Documento>();
