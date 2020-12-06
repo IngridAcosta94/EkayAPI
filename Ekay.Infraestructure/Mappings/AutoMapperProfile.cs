@@ -13,14 +13,19 @@ namespace AnimalSpawn.Application.Mappings
 
 		public AutoMapperProfile()
 		{
+			CreateMap<DocumentoRequestDto, Autor>();
+			CreateMap<DocumentoRequestDto, Remitente>();
 			CreateMap<Documento, DocumentoRequestDto>();
 			CreateMap<Documento, DocumentoResponseDto>();
-			CreateMap<DocumentoRequestDto, Documento>().AfterMap(
-			((source, destination) => {
-				destination.CreateAt = DateTime.Now;
-				destination.CreatedBy = 3;
-				//destination.Status = true;
-			}));
+			CreateMap<DocumentoRequestDto, Documento>()
+			 .ForMember(destination => destination.Autor, act => act.MapFrom(source => source))
+			 .ForMember(destination => destination.Remitente, act => act.MapFrom(source => source))
+			 .AfterMap(
+			 ((source, destination) => {
+				 destination.CreateAt = DateTime.Now;
+				 destination.CreatedBy = 3;
+				 // destination.Status = true;
+			 }));
 			CreateMap<DocumentoResponseDto, Documento>();
 
 
@@ -72,19 +77,52 @@ namespace AnimalSpawn.Application.Mappings
 			((source, destination) => {
 				destination.CreateAt = DateTime.Now;
 				destination.CreatedBy = 3;
-				//destination.Status = true;
+				
 			}));
 			CreateMap<RemitenteResponseDto, Remitente>();
 
-			CreateMap<Cuenta, CuentaRequestDto>();
+
+			/*CreateMap<CuentaRequestDto, Empresa>();
+			//.ForMember(destination => destination.Tag, act => act.MapFrom(source => source.Empresa));
+			CreateMap<Cuenta, CuentaRequestDto>().ForMember(destination => destination.Empresa, act => act.MapFrom(source => source));
 			CreateMap<Cuenta, CuentaResponseDto>();
 			CreateMap<CuentaRequestDto, Cuenta>().AfterMap(
 			((source, destination) => {
 				destination.CreateAt = DateTime.Now;
 				destination.CreatedBy = 3;
-				//destination.Status = true;
-			}));
+				
+			}));*/
+
+			//CreateMap<CuentaResponseDto, Cuenta>();
+
+			/*CreateMap<CuentaRequestDto, Cuenta>() .ForMember(destination => destination.Empresa, act => act.MapFrom(source => source))
+				.AfterMap(
+			 ((source, destination) => {
+				 destination.CreateAt = DateTime.Now;
+				 destination.CreatedBy = 3;
+				
+			 }));
+			CreateMap<CuentaResponseDto, Cuenta>();*/
+
+
+
+
+
+			CreateMap<CuentaRequestDto, Empresa>();
+			//ForMember(destination => destination.Nombre, act => act.MapFrom(source =>source.Empresa));
+			CreateMap<CuentaRequestDto, Cuenta>();
+			CreateMap<Cuenta, CuentaResponseDto>();
+			
+			CreateMap<CuentaRequestDto, Cuenta>()
+			 .ForMember(destination => destination.Empresa, act => act.MapFrom(source => source))
+			 .AfterMap(
+			 ((source, destination) => {
+				 destination.CreateAt = DateTime.Now;
+				 destination.CreatedBy = 3;
+				// destination.Status = true;
+			 }));
 			CreateMap<CuentaResponseDto, Cuenta>();
+
 
 		}
 

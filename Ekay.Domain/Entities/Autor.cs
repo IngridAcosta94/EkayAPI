@@ -12,9 +12,9 @@ namespace Ekay.Domain.Entities
         }
 
         //public int AutorId { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Correo { get; set; }
+        public string NombreA { get; set; }
+        public string ApellidoA { get; set; }
+        public string CorreoA { get; set; }
         public int EmpresaId { get; set; }
 
         public virtual Empresa Empresa { get; set; }

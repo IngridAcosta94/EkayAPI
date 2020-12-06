@@ -18,7 +18,7 @@ namespace Ekay.Application.Services
 
 		public async Task AddAutor(Autor autor)
 		{
-			Expression<Func<Autor, bool>> exprAutor = item => item.Nombre == autor.Nombre;
+			Expression<Func<Autor, bool>> exprAutor = item => item.NombreA == autor.NombreA;
 			var autores = _unitOfWork.AutorRepository.FindByCondition(exprAutor);
 
 

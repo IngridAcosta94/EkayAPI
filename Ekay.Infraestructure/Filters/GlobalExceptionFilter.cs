@@ -11,6 +11,7 @@ namespace Ekay.Infraestructure.Filters
 	public class GlobalExceptionFilter : IExceptionFilter
 	{
 		public void OnException(ExceptionContext context)
+		
 		{
 			var eType = context.Exception.GetType();
 			if (eType == typeof(BusinessException))

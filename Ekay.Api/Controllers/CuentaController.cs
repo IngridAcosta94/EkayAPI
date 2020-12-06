@@ -51,17 +51,19 @@ namespace Ekay.Api.Controllers
 
         {
 
-            var cuenta = _mapper.Map<CuentaRequestDto, Cuenta>(cuentaDto);
-            await _service.AddCuenta(cuenta);
-            var cuentaresponseDto = _mapper.Map<Cuenta, CuentaResponseDto>(cuenta);
-            var response = new ApiResponse<CuentaResponseDto>(cuentaresponseDto);
-            return Ok(response);
-
-
-
-
-
-
+            try
+            {
+                var cuenta = _mapper.Map<CuentaRequestDto, Cuenta>(cuentaDto);
+                await _service.AddCuenta(cuenta);
+                var cuentaresponseDto = _mapper.Map<Cuenta, CuentaResponseDto>(cuenta);
+                var response = new ApiResponse<CuentaResponseDto>(cuentaresponseDto);
+                return Ok(response);
+            }
+			catch (Exception ex)
+			{
+                return BadRequest(ex.Message);
+			}
+           
         }
 
         [HttpDelete("{id:int}")]

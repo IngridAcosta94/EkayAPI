@@ -18,8 +18,7 @@ namespace Ekay.Domain.Entities
         public string Direccion { get; set; }
         public string Correo { get; set; }
         public string Telefono { get; set; }
-
-        public string NombreRepresentante { get; set; }
+       public string NombreRepresentante { get; set; }
 
         public virtual ICollection<Autor> Autor { get; set; }
         public virtual ICollection<Carpeta> Carpeta { get; set; }

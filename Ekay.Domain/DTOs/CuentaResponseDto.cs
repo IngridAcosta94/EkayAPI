@@ -10,9 +10,15 @@ namespace Ekay.Domain.DTOs
 		public int Id { get; set; }
 		public string Usuario { get; set; }
 		public string Contrasenia { get; set; }
-		public int PerfilId { get; set; }
-		public int EmpresaId { get; set; }
+		//public int PerfilId { get; set; }
+		//public int EmpresaId { get; set; }
 
-		public virtual Empresa Empresa { get; set; }
+		//public Empresa Empresa { get; set; }
+		//public string Empresa { get; set; }
+		public string Nombre { get; set; }
+		public string Direccion { get; set; }
+		public string Correo { get; set; }
+		public string Telefono { get; set; }
+		public string NombreRepresentante { get; set; }
 	}
 }
