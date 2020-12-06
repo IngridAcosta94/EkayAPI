@@ -50,7 +50,11 @@ namespace Ekay.Api.Controllers
         }
 
         [HttpPost]
+<<<<<<< HEAD
         public async Task<IActionResult> Post([FromForm] DocumentoRequestDto documentoDto  /*string Correo, string CorreoCop, string UrlFirma*/)
+=======
+        public async Task<IActionResult> Post([FromForm]DocumentoRequestDto documentoDto ,[FromForm] List<IFormFile> files  /*string Correo, string CorreoCop, string UrlFirma*/)
+>>>>>>> 7b0bea0b83742b4b794bd5f8a41d8f0cec531462
 
         {
 

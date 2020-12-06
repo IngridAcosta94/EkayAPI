@@ -2438,10 +2438,7 @@
         },
         "runtime": {
           "bin/placeholder/Ekay.Infraestructure.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
