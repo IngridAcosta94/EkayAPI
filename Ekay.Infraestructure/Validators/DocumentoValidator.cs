@@ -13,7 +13,7 @@ namespace Ekay.Infraestructure.Validators
 			// pendiente validar algunas cosas
 			//RuleFor(documento => documento.Titulo).NotNull().Length(10, 50);
 			RuleFor(documento => documento.FechaCreacion).LessThan(DateTime.Now);
-			//RuleFor(animal => animal.Contenido).NotNull().Length(4, 200);
+			RuleFor(documento => documento.Contenido).NotNull().Length(4, 200);
 
 
 		}

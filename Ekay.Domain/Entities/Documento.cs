@@ -12,9 +12,9 @@ namespace Ekay.Domain.Entities
             Historial = new HashSet<Historial>();
         }
 
-       // public int DocumentoId { get; set; }
+       //public int DocumentoId { get; set; }
         //public string Titulo { get; set; }
-        //public string EnlaceUrl { get; set; }
+        //public string EnlaceUrl { get; set; 
         public DateTime? FechaCreacion { get; set; }
         public string Contenido { get; set; }
         public int RemitenteId { get; set; }

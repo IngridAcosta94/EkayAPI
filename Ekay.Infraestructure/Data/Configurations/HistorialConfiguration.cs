@@ -19,11 +19,11 @@ namespace Ekay.Infraestructure.Data.Configurations
 
             builder.Property(e => e.Fecha).HasColumnType("datetime");
 
-            builder.HasOne(d => d.Documento)
+           /* builder.HasOne(d => d.Documento)
                 .WithMany(p => p.Historial)
                 .HasForeignKey(d => d.DocumentoId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Historial_0");
+                .HasConstraintName("FK_Historial_0");*/
 
             builder.HasOne(d => d.Estatus)
                 .WithMany(p => p.Historial)

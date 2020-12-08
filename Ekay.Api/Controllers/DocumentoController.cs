@@ -34,11 +34,20 @@ namespace Ekay.Api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var documentos =  _service.GetDocumentos();
-            var DocumentosDto = _mapper.Map<IEnumerable<Documento>, IEnumerable<DocumentoResponseDto>>(documentos);
-            var response = new ApiResponse<IEnumerable<DocumentoResponseDto>>(DocumentosDto);
-            return Ok(response);
+            try
+            {
+                var documentos = _service.GetDocumentos();
+                var DocumentosDto = _mapper.Map<IEnumerable<Documento>, IEnumerable<DocumentoResponseDto>>(documentos);
+                var response = new ApiResponse<IEnumerable<DocumentoResponseDto>>(DocumentosDto);
+                return Ok(response);
+            }
+            catch(Exception ex)
+			{
+                return BadRequest(ex.Message);
+            }
+           
         }
+
         [HttpGet("{id:int}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -50,11 +59,10 @@ namespace Ekay.Api.Controllers
         }
 
         [HttpPost]
-<<<<<<< HEAD
+
         public async Task<IActionResult> Post([FromForm] DocumentoRequestDto documentoDto  /*string Correo, string CorreoCop, string UrlFirma*/)
-=======
-        public async Task<IActionResult> Post([FromForm]DocumentoRequestDto documentoDto ,[FromForm] List<IFormFile> files  /*string Correo, string CorreoCop, string UrlFirma*/)
->>>>>>> 7b0bea0b83742b4b794bd5f8a41d8f0cec531462
+
+        
 
         {
 

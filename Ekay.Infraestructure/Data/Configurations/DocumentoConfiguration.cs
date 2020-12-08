@@ -18,10 +18,7 @@ namespace Ekay.Infraestructure.Data.Configurations
                    .HasMaxLength(300)
                    .IsUnicode(false);
 
-           /* builder.Property(e => e.EnlaceUrl)
-                .HasColumnName("EnlaceURL")
-                .HasMaxLength(500)
-                .IsUnicode(false);*/
+           
 
             builder.Property(e => e.FechaCreacion).HasColumnType("datetime");
 
@@ -46,7 +43,7 @@ namespace Ekay.Infraestructure.Data.Configurations
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Documento_0");
 
-            builder.HasOne(d => d.TipoDoc)
+           builder.HasOne(d => d.TipoDoc)
                 .WithMany(p => p.Documento)
                 .HasForeignKey(d => d.TipoDocId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
