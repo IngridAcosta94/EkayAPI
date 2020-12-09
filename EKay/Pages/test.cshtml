@@ -1,0 +1,49 @@
+﻿@page
+@model EKay.Pages.testModel
+@{
+}
+<form id="Documento" name="Documento">
+    <input id="id" name="id" type="text" class="form-control" role="textbox" placeholder="id" />
+    <input id="usuario" name="usuario" type="text" class="form-control" role="textbox" @*asp-for="@Model.Cuenta.Correo"*@ placeholder="Usuario">
+    <input id="contrasenia" name="contrasenia" type="text" class="form-control" role="textbox" placeholder="Contraseña" />
+    <input id="perfilId" name="perfilId" type="text" class="form-control" role="textbox" placeholder="Perfil Id" />
+    <input id="empresaId" name="empresaId" type="text" class="form-control" role="textbox" placeholder="Empresa Id" />
+    <button type="submit" class="btn btn-dark">A ver si jala</button>
+</form>
+<div>
+    <label id="mensaje" name="mensaje" css="color:red;"></label>
+</div>
+
+<script>
+    const url = "https://localhost:44321/api/cuenta/"
+    const $formulario = document.querySelector('#Documento')
+
+    const $label = document.querySelector('#mensaje')
+    function displayMessage(message) {
+        if (message)
+            $label.textContent = "Ohhh por dios funciono!!!"
+        else
+            $label.textContent = "Oh ohhh hay problemas en la matrix!!!"
+    }
+
+    $formulario.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const id = 21;
+
+        const dt = new FormData($formulario);
+        console.log(dt.get('id'))
+        console.log(dt.get('usuario'))
+        console.log(dt.get('contrasenia'))
+        console.log(dt.get('perfilId'))
+        console.log(dt.get('empresaId'))
+        
+        fetch(url + id, {
+            method: 'PUT',
+            body: dt,
+        })
+            .then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => displayMessage(response));
+
+    })
+</script>

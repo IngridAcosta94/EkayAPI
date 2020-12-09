@@ -1,0 +1,193 @@
+﻿@page
+@model EKay.Pages.InicioModel
+@{ ViewData["Title"] = "Inicio"; }
+
+@* Vertical tabs?
+	Fixed Sidebar?
+	Side Navigation? (esta me gustó)
+	Side bar w/icons
+	Dropdown Menu in Sidenav*@
+<script src="https://kit.fontawesome.com/a6df1c27d8.js" crossorigin="anonymous"></script>
+<button class="btn btn-primary" onclick="openNav()">Ver Carpetas</button>
+<div id="mySidenav" class="sidenav">
+	<br />
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<button class="dropdown-btn">
+		<i class="fas fa-folder"></i>
+		Carpeta 1
+		<i class="fa fa-caret-down"></i>
+	</button>
+	<div class="dropdown-container">
+		<a href="#">Doc 1</a>
+		<a href="#">Doc 2</a>
+		<a href="#">Doc 3</a>
+	</div>
+
+</div>
+
+
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+	<!-- Use any element to open the sidenav -->
+	<center>
+		<h2>¿Nuevo Documento?</h2>
+	</center>
+	<br />
+	<div class="d-flex justify-content-center">
+		<div class="shadow-lg p-3 mb-5 bg-white rounded">
+			<form enctype="multipart/form-data">
+				<div class="card" style="width: 90rem; height: 25rem">
+					<div class="card-header d-flex justify-content-center">
+						<div style="width: 5rem">Paso 1.-</div>
+						<select class="form-control" style="width: 55rem" @*asp-for="@Model.DocumentoRequest.TipoDocId" asp-items="Html.GetEnumSelectList<Ekay.Clases.TipoDoc>()"*@>
+							<option hidden>Seleccione el tipo de documento.</option>
+						</select>
+					</div>
+					<div class="card-body">
+						<center>
+							<div class="card-title d-flex justify-content-center" style="width: 50rem">
+								<div style="width: 5rem">Paso 2.-</div>
+								<h5>Elija una opcion</h5>
+							</div>
+							<div style="width: 40rem"></div>
+							<br />
+							<button asp-page="/Documento" class="btn btn-danger" style="width: 20rem; height: 5rem">Subir un documento (PDF)</button>
+							<button @*type="submit"*@ class="btn btn-info" style="width: 20rem; height: 5rem">Crear un documento</button>
+						</center>
+					</div>
+				</div>
+
+
+
+			</form>
+
+
+			<table class="sortable table">
+				<thead>
+					<tr>
+						<th>
+							Id Documento
+						</th>
+						<th>
+							Fecha Creación
+						</th>
+						<th>
+							Nombre Archivo
+						</th>
+						<th>
+							Autor
+						</th>
+						<th>
+							Remitente
+
+						</th>
+						
+
+					</tr>
+				</thead>
+				<tbody id="Consultas" name="Consultas">
+
+					
+
+				</tbody>
+			</table>
+
+			<div>
+				<button class="btn btn-danger" onclick="traer()">Obtener</button>
+			</div>
+
+			<div>
+				<label id="mensaje" name="mensaje" css="color:red;"></label>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Scripts{
+
+
+
+	<script>
+		var contenido = document.querySelector('#Consultas')
+		
+
+		function traer() {
+
+			fetch("https://localhost:44321/api/documento")
+				.then(res => res.json())
+				.then(data => {
+
+					tabla(data)
+
+				})
+		}
+
+		function tabla(data) {
+			contenido.innerHTML = ''
+				for (let valor of data.data) {
+					contenido.innerHTML += `
+
+						<tr> 
+	                   
+							<th scope="row">${valor.id} </th> 
+							<td>${valor.fechaCreacion} </td> 
+							<td>${valor.nombreArchivo} </td> 
+							<td>${valor.nombreA} </td> 
+							<td>${valor.nombre} </td> 
+							<td>
+							 <button onclick="location.href='/api/documento?id=${valor.id}'">Editar</button>
+							</td>
+							
+						</tr>
+
+                    `
+
+						
+				}
+		}
+
+
+		
+
+
+
+	</script>
+
+
+
+
+
+
+	<script>
+		/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "300px";
+			document.getElementById("main").style.marginLeft = "300px";
+		}
+
+		/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("main").style.marginLeft = "0";
+		}
+
+		//* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+		var dropdown = document.getElementsByClassName("dropdown-btn");
+		var i;
+
+		for (i = 0; i < dropdown.length; i++) {
+			dropdown[i].addEventListener("click", function () {
+				this.classList.toggle("active");
+				var dropdownContent = this.nextElementSibling;
+				if (dropdownContent.style.display === "block") {
+					dropdownContent.style.display = "none";
+				} else {
+					dropdownContent.style.display = "block";
+				}
+			});
+		}
+
+	</script>
+
+}

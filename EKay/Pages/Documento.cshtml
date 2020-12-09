@@ -1,0 +1,205 @@
+﻿@page
+@model EKay.Pages.DocumentoModel
+@{ ViewData["Title"] = "Su documento"; }
+
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
+	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" />
+	<link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" />
+	<link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css" />*@
+<script src="https://kit.fontawesome.com/a6df1c27d8.js" crossorigin="anonymous"></script>
+
+
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="../Inicio">Cancelar</a></li>
+	</ol>
+</nav>
+<form method="post" id="Documento" name="Documento" enctype="multipart/form-data">
+	<div class="card" style="width: 70rem; height: auto">
+		<div class="card-body">
+			<div class="d-flex justify-content-center">
+				<div class="card" style="width: 60rem; height: 47rem">
+					<div class="card-body">
+						@*<input id="PreCon" type="file" class="form-control" role="textbox" style="width:50rem;height:37rem" placeholder="Contenido">*@
+						<div class="bg-text">
+							<i class="fas fa-plus-circle">
+							</i>
+							Arrastre su documento aqui para comenzar, o elija una plantilla
+						</div>
+					</div>
+					
+				</div>
+				<div class="card" style="width: 30rem; height: 47rem">
+					<!-- Tab links -->
+					<div class="tab">
+
+						<href class="tablinks btn" onclick="openCity(event, 'Datos del documento')">Datos del Documento</href>
+						<href class="tablinks btn" onclick="openCity(event, 'Envio')">Envio</href>
+					</div>
+					
+
+					<div id="Datos del documento" class="tabcontent overflow-auto">
+						<h4>Datos del documento</h4>
+						<br />
+						<!--<input type="text" class="form-control" role="textbox"--> @*asp-for="@Model.Cuenta.Correo"*@ <!--placeholder="Titulo">-->
+						<br />
+						<h5>Fecha creacion</h5>
+						<span class="text-danger" asp-validation-for="@Model.DocumentoRequest.FechaCreacion"></span>
+						<input name="FechaCreacion" type="date" class="form-control" role="textbox" asp-for="@Model.DocumentoRequest.FechaCreacion" placeholder="Fecha de Creación">
+						<br />
+
+						<h5>Autor</h5>
+						<span class="text-danger" asp-validation-for="@Model.AutorRequest.Nombre"></span>
+						<input name="NombreA" type="text" class="form-control" role="textbox" asp-for="@Model.AutorRequest.Nombre" placeholder="Nombre">
+						<br />
+						<span class="text-danger" asp-validation-for="@Model.AutorRequest.Apellido"></span>
+						<input name="ApellidoA" type="text" class="form-control" role="textbox" asp-for="@Model.AutorRequest.Apellido" placeholder="Apellido">
+						<br />
+						<span class="text-danger" asp-validation-for="@Model.AutorRequest.Correo"></span>
+						<input name="CorreoA" type="text" class="form-control" role="textbox" asp-for="@Model.AutorRequest.Correo" placeholder="Correo">
+						<br />
+						<h5>Remitente</h5>
+						<span class="text-danger" asp-validation-for="@Model.RemitenteRequest.Nombre"></span>
+						<input name="Nombre" type="text" class="form-control" role="textbox" asp-for="@Model.RemitenteRequest.Nombre" placeholder="Nombre">
+						<br />
+						<span class="text-danger" asp-validation-for="@Model.RemitenteRequest.Apellido"></span>
+						<input name="Apellido" type="text" class="form-control" role="textbox" asp-for="@Model.RemitenteRequest.Apellido" placeholder="Apellido">
+						<br />
+						<span class="text-danger" asp-validation-for="@Model.RemitenteRequest.Correo"></span>
+						<input name="Correo" type="text" class="form-control" role="textbox" asp-for="@Model.RemitenteRequest.Correo" placeholder="Correo">
+						<br />
+						@*<h5>Contenido:</h5>
+		<input id="Contenido" name="Contenido" type="file" class="form-control" role="textbox" placeholder="Contenido">*@
+						<br />
+						<p>
+
+							Sube archivos:
+
+							<input type="file" name="ArchivoSubido" multiple" />
+
+
+
+						</p>
+
+						<center>
+							<button type="submit" class="btn alert-dark">Registrar</button>
+						</center>
+						<button asp-page="/Inicio" class="btn btn-outline-danger m-1">Cancelar</button>
+					</div>
+
+					<div id="Envio" class="tabcontent">
+						<h4>Datos del firmante</h4>
+						<br />
+						<input type="text" class="form-control" role="textbox" @*asp-for="@Model.Cuenta.Correo"*@ placeholder="Nombre Completo">
+						<br />
+						<input type="text" class="form-control" role="textbox" @*asp-for="@Model.Cuenta.Correo"*@ placeholder="Correo Electronico">
+						<br />
+						@*<button style="border:none; background:none">
+								<i class="fas fa-plus-circle"></i>
+								Agregar firmante
+							</button>
+							<br />*@
+						<input type="text" class="form-control" role="textbox" @*asp-for="@Model.Cuenta.Correo"*@ placeholder="Teléfono">
+						<br />
+						<input type="text" class="form-control" role="textbox" @*asp-for="@Model.Cuenta.Correo"*@ placeholder="Puesto">
+						<br />
+						<input type="text" class="form-control" role="textbox" @*asp-for="@Model.Cuenta.Correo"*@ placeholder="Nombre de la organización">
+						<br />
+						<h4>Opciones del Documento</h4>
+						<br />
+						<input type="radio" id="clave" />
+						<label for="clave">Clave de acceso</label>
+						<br />
+						<br />
+						<input type="text" class="form-control" role="textbox" @*asp-for="@Model.Cuenta.Correo"*@ placeholder="Cree una clave de acceso">
+						<br />
+						<br />
+						
+					</div>
+					<div>
+						<label id="mensaje" name="mensaje" css="color:red;"></label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</form>
+
+
+@section Scripts{
+	<script>
+		const url = "https://localhost:44321/api/documento"
+		const $formulario = document.querySelector('#Documento')
+
+		//borre el createobject
+
+		const $label = document.querySelector('#mensaje')
+		function displayMessage(message) {
+			if (message)
+				$label.textContent = "Ohhh por dios funciono!!!"
+			else
+				$label.textContent = "Oh ohhh hay problemas en la matrix!!!"
+		}
+
+		$formulario.addEventListener('submit', (e) => {
+			e.preventDefault();
+
+			const dt = new FormData($formulario);
+
+			dt.set('contenido', '');
+			dt.set('nombreArchivo', '');
+			dt.set('ruta', '');
+			dt.set('tamanio', 0);
+			dt.set('extension', '');
+			dt.set('rutaBase', '');
+			dt.set('certificado', '');
+			dt.set('empresaId', 1);
+			dt.set('remitenteId', 1);
+			dt.set('tipoDocId', 1);
+			dt.set('carpetaId', 2);
+
+			fetch(url, {
+				method: 'POST',
+				body: dt,
+			})
+				.then(res => res.json())
+				.catch(error => console.error('Error:', error))
+				.then(response => displayMessage(response));
+
+		})
+
+		
+
+
+	</script>
+	<script>
+		function openCity(evt, cityName) {
+			// Declare all variables
+			var i, tabcontent, tablinks;
+
+			// Get all elements with class="tabcontent" and hide them
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+
+			// Get all elements with class="tablinks" and remove the class "active"
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+
+			// Show the current tab, and add an "active" class to the button that opened the tab
+			document.getElementById(cityName).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+	</script>
+	
+
+}
+

@@ -1,0 +1,115 @@
+﻿@page
+@model EKay.Pages.Crear_CuentaModel
+@{
+    ViewData["Title"] = "Cree su cuenta";
+}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../Index">Cancelar</a></li>
+    </ol>
+</nav>
+<div class="d-flex justify-content-center centrado">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="card" style="width: 30rem">
+            <div class="card-body">
+                <center>
+                    <h2 class="card-title">Crear su cuenta</h2>
+                </center>
+                <form method="post" class="d-flex justify-content-center" enctype="multipart/form-data">
+                    <div class="d-flex justify-content-center" style="width: 30rem;">
+                        <ul class="list-group list-group-flush" style="width: auto">
+                            <li class="list-group-item">
+                                <span class="text-danger" asp-validation-for="EmpresaRequest.Nombre"></span>
+                                <div class="form-group">
+                                    <input asp-for="EmpresaRequest.Nombre" type="text" class="form-control" role="textbox" placeholder="Nombre de su empresa">
+                                </div>
+                                <span class="text-danger" asp-validation-for="EmpresaRequest.NombreRepresentante"></span>
+                                <div class="form-group">
+                                    <input asp-for="EmpresaRequest.NombreRepresentante" type="text" class="form-control" role="textbox" placeholder="Nombre de su representante">
+                                </div>
+                                <span class="text-danger" asp-validation-for="EmpresaRequest.Direccion"></span>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input asp-for="EmpresaRequest.Direccion" type="text" class="form-control" role="textbox" placeholder="Dirección">
+                                </div>
+                                <span class="text-danger" asp-validation-for="EmpresaRequest.Telefono"></span>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input asp-for="EmpresaRequest.Telefono" type="text" class="form-control" role="textbox" placeholder="Telefono">
+                                </div>
+                                <span class="text-danger" asp-validation-for="EmpresaRequest.Correo"></span>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input asp-for="EmpresaRequest.Correo" type="email" class="form-control" role="textbox" placeholder="Correo">
+                                </div>
+                                <span class="text-danger" asp-validation-for="CuentaRequest.Contrasenia"></span>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input asp-for="CuentaRequest.Contrasenia" type="password" class="form-control" role="textbox" placeholder="Contraseña">
+                                </div>
+                                <br />
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-outline-danger m-1">Crear Cuenta</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+                <div>
+                    <label id="mensaje" name="mensaje" css="color:red;"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @*<script>
+            const url = "https://localhost:44321/api/empresa/"
+            var formulario = document.getElementById('CrearCuenta')
+
+            const url = "https://localhost:44321/api/empresa"
+            const $formulario = document.querySelector('#crearCuenta')
+
+            const $label = document.querySelector('#mensaje')
+            function displayMessage(message) {
+                if (message)
+                    $label.textContent = "."
+                else
+                    $label.textContent = "Ha ocurrido un problema."
+            }
+            $formulario.addEventListener('submit', (e) => {
+                e.preventDefault();
+                console.log('lmao')
+
+
+                const dt = new FormData($formulario);
+
+                //Mantener esto solo para pruebas
+                console.log(dt.get('nombre'))
+                console.log(dt.get('nombrerepresentante'))
+                console.log(dt.get('direccion'))
+                console.log(dt.get('telefono'))
+                console.log(dt.get('correo'))
+                console.log(dt.get('contrasenia'))
+
+
+                //fetch
+                fetch(url, {
+                    method: 'POST',
+                    body: dt
+
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(dt)
+                    })
+
+                    body: dt,
+
+                })
+                    .then(res => res.json())
+                    .then(window.location.href = 'https://localhost:44348/Inicio')
+                    .catch(error => console.error('Error:', error))
+                    .then(response => displayMessage(response));
+                //queda pendiente usar correo y contraseña para darselos tambien a cuenta
+            })
+        </script>*@
+
+}
