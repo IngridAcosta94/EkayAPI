@@ -8,7 +8,6 @@ C:\Users\ekt\source\repos\Ekay\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.p
 C:\Users\ekt\source\repos\Ekay\Ekay.Domain\bin\Debug\netcoreapp3.1\Ekay.Domain.runtimeconfig.json
 C:\Users\ekt\source\repos\Ekay\Ekay.Domain\bin\Debug\netcoreapp3.1\Ekay.Domain.runtimeconfig.dev.json
 C:\Users\ekt\source\repos\Ekay\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.genruntimeconfig.cache
-C:\Users\ekt\source\repos\Ekay\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.csproj.CoreCompileInputs.cache
 C:\Users\ekt\source\repos\Ekay\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.csprojAssemblyReference.cache
 C:\Users\dioni\Desktop\EkayAPI\Ekay.Domain\bin\Debug\netcoreapp3.1\Ekay.Domain.deps.json
 C:\Users\dioni\Desktop\EkayAPI\Ekay.Domain\bin\Debug\netcoreapp3.1\Ekay.Domain.runtimeconfig.json
@@ -22,3 +21,4 @@ C:\Users\dioni\Desktop\EkayAPI\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.c
 C:\Users\dioni\Desktop\EkayAPI\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.dll
 C:\Users\dioni\Desktop\EkayAPI\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.pdb
 C:\Users\dioni\Desktop\EkayAPI\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.genruntimeconfig.cache
+C:\Users\ekt\source\repos\Ekay\Ekay.Domain\obj\Debug\netcoreapp3.1\Ekay.Domain.csproj.CoreCompileInputs.cache

@@ -1,6 +1,7 @@
 ﻿using Ekay.Domain.Entities;
 using Ekay.Domain.Exceptions;
 using Ekay.Domain.Interfaces;
+using Ekay.Domain.QueyFilters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,14 +49,17 @@ namespace Ekay.Application.Services
 			await _unitOfWork.SaveChangesAsync();
 		}
 
-		public async Task<Documento> GetDocumento(int id)
+		public Task<Documento> GetDocumento(int id)
 		{
-			return await _unitOfWork.DocumentoRepository.GetById(id);
+			throw new NotImplementedException();
 		}
 
-		public IEnumerable<Documento> GetDocumentos()
+		
+
+
+		public IEnumerable<Documento> GetDocumentos(DocumentoQueryFilter filter)
 		{
-			return  _unitOfWork.DocumentoRepository.GetAll();
+			return _unitOfWork.DocumentoRepository.GetDocumentos(filter);
 		}
 
 		
@@ -70,6 +74,7 @@ namespace Ekay.Application.Services
 			docto.CarpetaId = documento.CarpetaId;
 			docto.RemitenteId = documento.RemitenteId;
 			docto.TipoDocId = documento.TipoDocId;*/
+			docto.Autor.NombreA = documento.Autor.NombreA;
 			docto.NombreArchivo = documento.NombreArchivo;
 			docto.Tamanio = documento.Tamanio;
 			docto.Extension = documento.Extension;

@@ -20,7 +20,7 @@ namespace Ekay.Infraestructure.Repositories
 		private readonly IRepository<Autor> _autorRepository;
 		private readonly IRepository<Carpeta> _carpetaRepository;
 		private readonly IRepository<Cuenta> _cuentaRepository;
-		private readonly IRepository<Documento> _documentoRepository;
+		private readonly IDocumentoRepository _documentoRepository;
 		private readonly IRepository<Empresa> _empresaRepository;
 		private readonly IRepository<Estatus> _estatusRepository;
 		private readonly IRepository<Firmante> _firmanteRepository;
@@ -34,8 +34,7 @@ namespace Ekay.Infraestructure.Repositories
 		public IRepository<Carpeta> CarpetaRepository => _carpetaRepository ?? new SQLRepository<Carpeta>(_context);
 
 		public IRepository<Cuenta> CuentaRepository => _cuentaRepository ?? new SQLRepository<Cuenta>(_context);
-		public IRepository<Documento> DocumentoRepository => _documentoRepository ?? new SQLRepository<Documento>(_context);
-
+		
 		public IRepository<Empresa> EmpresaRepository => _empresaRepository ?? new SQLRepository<Empresa>(_context);
 
 		public IRepository<Estatus> EstatusRepository => _estatusRepository ?? new SQLRepository<Estatus>(_context);
@@ -49,6 +48,8 @@ namespace Ekay.Infraestructure.Repositories
 		public IRepository<Remitente> RemitenteRepository => _remitenteRepository ?? new SQLRepository<Remitente>(_context);
 
 		public IRepository<TipoDocumento> TipoDocumentoRepository => _tipoDocumentoRepository ?? new SQLRepository<TipoDocumento>(_context);
+
+		public IDocumentoRepository AnimalRepository => _documentoRepository ?? new DocumentoRepository(_context);
 
 		public void Dispose()
 		{
