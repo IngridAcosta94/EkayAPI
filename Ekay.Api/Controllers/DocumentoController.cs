@@ -159,7 +159,7 @@ namespace Ekay.Api.Controllers
                 {
                     foreach (var file in files)
                     {
-                        var filePath = "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Archivos\\" + file.FileName;
+                        var filePath = "~\\Archivos\\" + file.FileName;
                         using (var stream = System.IO.File.Create(filePath))
                         {
                             await file.CopyToAsync(stream);

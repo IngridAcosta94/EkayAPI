@@ -14,11 +14,13 @@ namespace AnimalSpawn.Application.Mappings
 		public AutoMapperProfile()
 		{
 			CreateMap<DocumentoRequestDto, Autor>();
+			CreateMap<DocumentoRequestDto, Remitente>();
 			CreateMap<DocumentoRequestDto, Documento>();
 			CreateMap<Documento, DocumentoResponseDto>();
 
 			CreateMap<DocumentoRequestDto, Documento>()
 			 .ForMember(destination => destination.Autor, act => act.MapFrom(source => source))
+			  .ForMember(destination => destination.Remitente, act => act.MapFrom(source => source))
 			 .AfterMap(
 			 ((source, destination) => {
 				 destination.CreateAt = DateTime.Now;

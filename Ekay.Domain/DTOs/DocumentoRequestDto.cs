@@ -23,8 +23,12 @@ namespace Ekay.Domain.DTOs
         public string ApellidoA { get; set; }
         public string CorreoA { get; set; }
         public int EmpresaId { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Correo { get; set; }
+        public string File { get; set; }
 
-       
+
 
 
 
