@@ -49,7 +49,7 @@ namespace Ekay.Infraestructure.Repositories
 
 		public IRepository<TipoDocumento> TipoDocumentoRepository => _tipoDocumentoRepository ?? new SQLRepository<TipoDocumento>(_context);
 
-		public IDocumentoRepository AnimalRepository => _documentoRepository ?? new DocumentoRepository(_context);
+		public IDocumentoRepository DocumentoRepository => _documentoRepository ?? new DocumentoRepository(_context);
 
 		public void Dispose()
 		{

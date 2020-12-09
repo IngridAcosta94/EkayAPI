@@ -33,11 +33,11 @@ namespace Ekay.Api.Controllers
 
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get([FromQuery] DocumentoQueryFilter filter)
         {
             try
             {
-                var documentos = _service.GetDocumentos();
+                var documentos = _service.GetDocumentos(filter);
                 var DocumentosDto = _mapper.Map<IEnumerable<Documento>, IEnumerable<DocumentoResponseDto>>(documentos);
                 var response = new ApiResponse<IEnumerable<DocumentoResponseDto>>(DocumentosDto);
                 return Ok(response);
@@ -50,8 +50,7 @@ namespace Ekay.Api.Controllers
         }
 
         [HttpGet("{id:int}")]
-
-        public async Task<IActionResult> Get([FromQuery] DocumentoQueryFilter filter)
+        public async Task<IActionResult> Get(int id)
         {
             var documento = await _service.GetDocumento(id);
             var documentoDto = _mapper.Map<Documento, DocumentoResponseDto>(documento);

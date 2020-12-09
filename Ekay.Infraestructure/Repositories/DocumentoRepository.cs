@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Ekay.Infraestructure.Repositories
 {
-	class DocumentoRepository : SQLRepository<Documento>, IDocumentoRepository
+	public class DocumentoRepository : SQLRepository<Documento>, IDocumentoRepository
 	{
 
 		private readonly EkayContext _context;

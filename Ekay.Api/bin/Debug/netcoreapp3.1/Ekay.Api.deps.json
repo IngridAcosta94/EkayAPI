@@ -418,6 +418,17 @@
           "lib/itextsharp.dll": {}
         }
       },
+      "LinqKit.Core/1.1.21": {
+        "runtime": {
+          "lib/netstandard2.1/LinqKit.Core.dll": {
+            "assemblyVersion": "1.1.21.0",
+            "fileVersion": "1.1.21.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/LinqKit.Core.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Connections.Abstractions/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.1",
@@ -2018,6 +2029,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
           "Ekay.Domain": "1.0.0",
           "FluentValidation.AspNetCore": "9.2.0",
+          "LinqKit.Core": "1.1.21",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9"
         },
         "runtime": {
@@ -3686,6 +3698,13 @@
       "sha512": "sha512-8m9oT1nh9F4Z1tzWUey/8lEzZtMGFCDXQY5+8/SSmPgUWAAAWniRo8pimKUZyteNqJr5vtFBxjAhRwLxG7Q0zQ==",
       "path": "itextsharp/5.5.13.2",
       "hashPath": "itextsharp.5.5.13.2.nupkg.sha512"
+    },
+    "LinqKit.Core/1.1.21": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TLTqGz2zp5xgzLLxS16feVocIb1k/gHC2/9M3cYKu+MVddL5JqNAOAejBH2abqH3YbIr4PnDvyEY2IrxFCasSQ==",
+      "path": "linqkit.core/1.1.21",
+      "hashPath": "linqkit.core.1.1.21.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Connections.Abstractions/2.2.0": {
       "type": "package",

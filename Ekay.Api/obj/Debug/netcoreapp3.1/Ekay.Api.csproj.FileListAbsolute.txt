@@ -170,3 +170,4 @@ C:\Users\dioni\Desktop\EkayAPI\Ekay.Api\obj\Debug\netcoreapp3.1\Ekay.Api.pdb
 C:\Users\dioni\Desktop\EkayAPI\Ekay.Api\obj\Debug\netcoreapp3.1\Ekay.Api.genruntimeconfig.cache
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\LinqKit.Core.dll
