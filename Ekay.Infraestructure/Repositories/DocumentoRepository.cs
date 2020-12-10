@@ -14,7 +14,7 @@ namespace Ekay.Infraestructure.Repositories
 {
 	public class DocumentoRepository : SQLRepository<Documento>, IDocumentoRepository
 	{
-		private readonly DbSet<T> _entities;
+		//private readonly DbSet<T> _entities;
 		private readonly EkayContext _context;
 		public DocumentoRepository(EkayContext context) : base(context)
 		{
@@ -50,7 +50,7 @@ namespace Ekay.Infraestructure.Repositories
 				exprFinal = exprFinal.And(expr);
 			}
 
-			return _entities.Where(expression).AsNoTracking().AsEnumerable();
+			return _context.Documento.Include(a => a.Autor).Include(r => r.Remitente).Where(exprFinal).AsNoTracking().AsEnumerable();
 		}
 	}
 
