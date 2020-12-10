@@ -3,8 +3,10 @@ using Ekay.Domain.Interfaces;
 using Ekay.Domain.QueyFilters;
 using Ekay.Infraestructure.Data;
 using LinqKit;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
@@ -12,11 +14,12 @@ namespace Ekay.Infraestructure.Repositories
 {
 	public class DocumentoRepository : SQLRepository<Documento>, IDocumentoRepository
 	{
-
+		private readonly DbSet<T> _entities;
 		private readonly EkayContext _context;
 		public DocumentoRepository(EkayContext context) : base(context)
 		{
 			this._context = context;
+
 		}
 
 		public IEnumerable<Documento> GetDocumentos(DocumentoQueryFilter filter)
@@ -47,7 +50,8 @@ namespace Ekay.Infraestructure.Repositories
 				exprFinal = exprFinal.And(expr);
 			}
 
-			return FindByCondition(exprFinal);
+			return _entities.Where(expression).AsNoTracking().AsEnumerable();
 		}
 	}
+
 }

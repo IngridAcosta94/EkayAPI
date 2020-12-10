@@ -49,9 +49,9 @@ namespace Ekay.Application.Services
 			await _unitOfWork.SaveChangesAsync();
 		}
 
-		public Task<Documento> GetDocumento(int id)
+		public async Task<Documento> GetDocumento(int id)
 		{
-			throw new NotImplementedException();
+			return await _unitOfWork.DocumentoRepository.GetById(id);
 		}
 
 		
@@ -61,6 +61,15 @@ namespace Ekay.Application.Services
 		{
 			return _unitOfWork.DocumentoRepository.GetDocumentos(filter);
 		}
+
+
+
+
+
+
+
+
+
 
 		
 		
