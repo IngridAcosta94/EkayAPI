@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Ekay.Infraestructure.Repositories
 {
@@ -20,6 +21,12 @@ namespace Ekay.Infraestructure.Repositories
 		{
 			this._context = context;
 
+		}
+
+		public async Task<Documento> GetDocumento(int id)
+		{
+			return await _context.Documento.SingleOrDefaultAsync(Documento => Documento.Id == id)
+			?? new Documento();
 		}
 
 		public IEnumerable<Documento> GetDocumentos(DocumentoQueryFilter filter)
@@ -52,6 +59,18 @@ namespace Ekay.Infraestructure.Repositories
 
 			return _context.Documento.Include(a => a.Autor).Include(r => r.Remitente).Where(exprFinal).AsNoTracking().AsEnumerable();
 		}
+
+		public async Task<bool> UpdateDocumento(Documento documento)
+		{
+			var current = await GetDocumento(documento.Id);
+			current.Contenido = documento.Contenido;
+			var rowsUpdate = await _context.SaveChangesAsync();
+			return rowsUpdate > 0;
+		}
+
+		
 	}
+
+
 
 }

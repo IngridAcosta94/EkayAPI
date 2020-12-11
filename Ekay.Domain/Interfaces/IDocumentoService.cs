@@ -13,7 +13,7 @@ namespace Ekay.Domain.Interfaces
 		IEnumerable<Documento> GetDocumentos(DocumentoQueryFilter filters);
 		Task<Documento> GetDocumento(int id);
 		Task AddDocumento(Documento documento);
-		Task UpdateDocumento(Documento documento);
+		Task<bool> UpdateDocumento(Documento documento);
 		Task DeleteDocumento(int id);
 
 
