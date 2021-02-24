@@ -13,6 +13,13 @@ namespace Ekay.Domain.DTOs
         public string Puesto { get; set; }
         public string Organizacion { get; set; }
         public int DocumentoId { get; set; }
+       public string Certificado { get; set; }
+
+        //public string RutaBase { get; set; }
+
+        
+
+
 
     }
 }

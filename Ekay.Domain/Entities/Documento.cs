@@ -8,7 +8,7 @@ namespace Ekay.Domain.Entities
     {
         public Documento()
         {
-            Firmante = new HashSet<Firmante>();
+            //Firmante = new HashSet<Firmante>();
             Historial = new HashSet<Historial>();
         }
 
@@ -20,6 +20,10 @@ namespace Ekay.Domain.Entities
         public int RemitenteId { get; set; }
         public int AutorId { get; set; }
         public int TipoDocId { get; set; }
+
+        public int FirmanteId { get; set; }
+
+
         public int CarpetaId { get; set; }
 		public string NombreArchivo { get; set; }
 		public string Extension { get; set; }
@@ -35,7 +39,11 @@ namespace Ekay.Domain.Entities
         public virtual Carpeta Carpeta { get; set; }
         public virtual Remitente Remitente { get; set; }
         public virtual TipoDocumento TipoDoc { get; set; }
-        public virtual ICollection<Firmante> Firmante { get; set; }
+
+        public virtual Firmante Firmante { get; set; }
+
+
+        //public virtual ICollection<Firmante> Firmante { get; set; }
         public virtual ICollection<Historial> Historial { get; set; }
     }
 }

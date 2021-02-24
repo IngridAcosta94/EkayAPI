@@ -32,10 +32,7 @@ namespace Ekay.Infraestructure.Data.Configurations
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Documento_1");
 
-            builder.HasOne(d => d.Carpeta)
-                .WithMany(p => p.Documento)
-                .HasForeignKey(d => d.CarpetaId)
-                .HasConstraintName("FK_Documento_4");
+           
 
             builder.HasOne(d => d.Remitente)
                 .WithMany(p => p.Documento)
@@ -49,7 +46,17 @@ namespace Ekay.Infraestructure.Data.Configurations
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Documento_2");
 
-             builder.Property(e => e.NombreArchivo)
+            builder.HasOne(d => d.Firmante)
+                 .WithMany(p => p.Documento)
+                 .HasForeignKey(d => d.FirmanteId)
+                 .OnDelete(DeleteBehavior.ClientSetNull)
+                 .HasConstraintName("FK_Documento_3");
+            builder.HasOne(d => d.Carpeta)
+               .WithMany(p => p.Documento)
+               .HasForeignKey(d => d.CarpetaId)
+               .HasConstraintName("FK_Documento_4");
+
+            builder.Property(e => e.NombreArchivo)
                .HasColumnName("NombreArchivo")
                .HasMaxLength(500)
                .IsUnicode(false);

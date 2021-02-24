@@ -10,10 +10,10 @@ namespace Ekay.Domain.Interfaces
 	public interface IDocumentoService
 	{
 
-		IEnumerable<Documento> GetDocumentos(DocumentoQueryFilter filters);
+		IEnumerable<Documento> GetDocumentos();
 		Task<Documento> GetDocumento(int id);
 		Task AddDocumento(Documento documento);
-		Task<bool> UpdateDocumento(Documento documento);
+		Task UpdateDocumento(Documento documento);
 		Task DeleteDocumento(int id);
 
 

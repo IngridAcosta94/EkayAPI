@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
+
 
 namespace Ekay.Application.Services
 {
@@ -56,10 +58,16 @@ namespace Ekay.Application.Services
 			return _unitOfWork.FirmanteRepository.GetAll();
 		}
 
+		
+
 		public void UpdateFirmante(Firmante firmante)
 		{
 			_unitOfWork.FirmanteRepository.Update(firmante);
 			_unitOfWork.SaveChangesAsync();
 		}
+
+		
+
+
 	}
 }

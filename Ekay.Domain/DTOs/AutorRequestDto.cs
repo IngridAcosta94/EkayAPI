@@ -9,6 +9,7 @@ namespace Ekay.Domain.DTOs
 		public string NombreA { get; set; }
 		public string ApellidoA { get; set; }
 		public string CorreoA { get; set; }
-		//public int EmpresaId { get; set; }
+		
+		public int EmpresaId { get; set; }
 	}
 }

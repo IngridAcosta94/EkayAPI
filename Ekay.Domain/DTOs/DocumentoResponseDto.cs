@@ -13,9 +13,7 @@ namespace Ekay.Domain.DTOs
        
         public string NombreArchivo { get; set; }
        
-        public string NombreA { get; set; }
-
-        public string Nombre { get; set; }
+      //Original
         
 
 

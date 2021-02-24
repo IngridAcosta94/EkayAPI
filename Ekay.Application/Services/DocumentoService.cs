@@ -58,19 +58,30 @@ namespace Ekay.Application.Services
 		
 
 
-		public IEnumerable<Documento> GetDocumentos(DocumentoQueryFilter filter)
+		public IEnumerable<Documento> GetDocumentos( )
 		{
-			return _unitOfWork.DocumentoRepository.GetDocumentos(filter);
+			return _unitOfWork.DocumentoRepository.GetAll( );
 		}
 
 
 
 
-        
 
-		public async Task<bool> UpdateDocumento(Documento documento)
+
+		public async Task UpdateDocumento(Documento documento)
+		
 		{
-			return await _unitOfWork.DocumentoRepository.UpdateDocumento(documento);
+			try
+			{
+				var docto = await _unitOfWork.DocumentoRepository.GetById(documento.Id);
+				docto.Certificado = documento.Certificado;
+				_unitOfWork.DocumentoRepository.Update(documento);
+				await _unitOfWork.SaveChangesAsync();
+			}
+			catch(Exception ex)
+			{
+				string hola = (ex.Message);
+			}
 		}
 
 

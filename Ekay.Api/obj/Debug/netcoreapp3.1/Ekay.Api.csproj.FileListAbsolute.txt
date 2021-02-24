@@ -54,13 +54,9 @@ C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\System.Runtime.C
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Cng.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
-C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
-C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Cng.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
@@ -171,3 +167,13 @@ C:\Users\dioni\Desktop\EkayAPI\Ekay.Api\obj\Debug\netcoreapp3.1\Ekay.Api.genrunt
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\LinqKit.Core.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ekt\source\repos\Ekay\Ekay.Api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll

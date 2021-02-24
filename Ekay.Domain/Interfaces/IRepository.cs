@@ -15,5 +15,7 @@ namespace Ekay.Domain.Interfaces
 		IEnumerable<T> GetAll();
 		Task<T> GetById(int id);
 		void Update(T entity);
+
+		//Task<T> TraerDatos(int id);
 	}
 }

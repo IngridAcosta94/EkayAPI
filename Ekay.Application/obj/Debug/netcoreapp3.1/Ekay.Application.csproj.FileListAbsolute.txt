@@ -9,7 +9,6 @@ C:\Users\ekt\source\repos\Ekay\Ekay.Application\obj\Debug\netcoreapp3.1\Ekay.App
 C:\Users\ekt\source\repos\Ekay\Ekay.Application\obj\Debug\netcoreapp3.1\Ekay.Application.csproj.CopyComplete
 C:\Users\ekt\source\repos\Ekay\Ekay.Application\obj\Debug\netcoreapp3.1\Ekay.Application.dll
 C:\Users\ekt\source\repos\Ekay\Ekay.Application\obj\Debug\netcoreapp3.1\Ekay.Application.pdb
-C:\Users\ekt\source\repos\Ekay\Ekay.Application\obj\Debug\netcoreapp3.1\Ekay.Application.csproj.CoreCompileInputs.cache
 C:\Users\dioni\Desktop\EkayAPI\Ekay.Application\bin\Debug\netcoreapp3.1\Ekay.Application.deps.json
 C:\Users\dioni\Desktop\EkayAPI\Ekay.Application\bin\Debug\netcoreapp3.1\Ekay.Application.dll
 C:\Users\dioni\Desktop\EkayAPI\Ekay.Application\bin\Debug\netcoreapp3.1\Ekay.Application.pdb
@@ -22,3 +21,4 @@ C:\Users\dioni\Desktop\EkayAPI\Ekay.Application\obj\Debug\netcoreapp3.1\Ekay.App
 C:\Users\dioni\Desktop\EkayAPI\Ekay.Application\obj\Debug\netcoreapp3.1\Ekay.Application.csproj.CopyComplete
 C:\Users\dioni\Desktop\EkayAPI\Ekay.Application\obj\Debug\netcoreapp3.1\Ekay.Application.dll
 C:\Users\dioni\Desktop\EkayAPI\Ekay.Application\obj\Debug\netcoreapp3.1\Ekay.Application.pdb
+C:\Users\ekt\source\repos\Ekay\Ekay.Application\obj\Debug\netcoreapp3.1\Ekay.Application.csproj.CoreCompileInputs.cache

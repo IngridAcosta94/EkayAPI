@@ -15,10 +15,10 @@ namespace Ekay.Domain.Interfaces
 		public IRepository<Carpeta> CarpetaRepository { get; }
 		public IRepository<Cuenta> CuentaRepository { get; }
 		
-		public IDocumentoRepository DocumentoRepository { get; }
+		public IRepository<Documento> DocumentoRepository { get; }
 		public IRepository<Empresa> EmpresaRepository { get; }
 		public IRepository<Estatus> EstatusRepository { get; }
-		public IRepository<Firmante> FirmanteRepository { get; }
+		public IFirmanteRepository FirmanteRepository { get; }
 		public IRepository<Historial> HistorialRepository { get; }
 		public IRepository<Perfil> PerfilRepository { get; }
 		public IRepository<Remitente> RemitenteRepository { get; }

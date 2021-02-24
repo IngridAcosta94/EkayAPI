@@ -13,10 +13,10 @@ using System.Threading.Tasks;
 
 namespace Ekay.Infraestructure.Repositories
 {
-	public class DocumentoRepository : SQLRepository<Documento>, IDocumentoRepository
+	public class DocumentoRepository //: SQLRepository<Documento>, IDocumentoRepository
 	{
 		//private readonly DbSet<T> _entities;
-		private readonly EkayContext _context;
+		/*private readonly EkayContext _context;
 		public DocumentoRepository(EkayContext context) : base(context)
 		{
 			this._context = context;
@@ -66,7 +66,7 @@ namespace Ekay.Infraestructure.Repositories
 			current.Contenido = documento.Contenido;
 			var rowsUpdate = await _context.SaveChangesAsync();
 			return rowsUpdate > 0;
-		}
+		}*/
 
 		
 	}

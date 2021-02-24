@@ -37,15 +37,19 @@ namespace Ekay.Infraestructure.Data.Configurations
                 .HasMaxLength(10)
                 .IsUnicode(false);
 
-            /*builder.HasOne(d => d.Documento)
+           /* builder.HasOne(d => d.Documento)
                 .WithMany(p => p.Firmante)
                 .HasForeignKey(d => d.DocumentoId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Firmante_0");
+                .HasConstraintName("FK_Firmante_0");*/
+
+
+          
+
             builder.Ignore(e => e.CreateAt);
             builder.Ignore(e => e.CreatedBy);
             builder.Ignore(e => e.UpdateAt);
-            builder.Ignore(e => e.UpdatedBy);*/
+            builder.Ignore(e => e.UpdatedBy);
         }
 	}
 }

@@ -7,7 +7,7 @@ namespace Ekay.Domain.Entities
     {
         public Empresa()
         {
-            Autor = new HashSet<Autor>();
+            //Autor = new HashSet<Autor>();
             Carpeta = new HashSet<Carpeta>();
             Cuenta = new HashSet<Cuenta>();
         }
@@ -20,7 +20,7 @@ namespace Ekay.Domain.Entities
         public string Telefono { get; set; }
        public string NombreRepresentante { get; set; }
 
-        public virtual ICollection<Autor> Autor { get; set; }
+       // public virtual ICollection<Autor> Autor { get; set; }
         public virtual ICollection<Carpeta> Carpeta { get; set; }
         public virtual ICollection<Cuenta> Cuenta { get; set; }
     }

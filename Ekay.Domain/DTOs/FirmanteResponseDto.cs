@@ -15,6 +15,7 @@ namespace Ekay.Domain.DTOs
         public string Organizacion { get; set; }
         public int DocumentoId { get; set; }
 
+        //public string RutaBase { get; set; }
 
     }
 }

@@ -13,5 +13,7 @@ namespace Ekay.Domain.Interfaces
 		Task AddFirmante(Firmante firmante);
 		void UpdateFirmante(Firmante firmante);
 		Task DeleteFirmante(int id);
+
+		//Task<Firmante> TraerDatos(int id);
 	}
 }

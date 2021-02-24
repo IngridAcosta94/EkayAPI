@@ -21,6 +21,7 @@ namespace AnimalSpawn.Application.Mappings
 			CreateMap<DocumentoRequestDto, Documento>()
 			 .ForMember(destination => destination.Autor, act => act.MapFrom(source => source))
 			 .ForMember(destination => destination.Remitente, act => act.MapFrom(source => source))
+			 //.ForMember(destination => destination.Remitente, act => act.MapFrom(source => source))
 			 .AfterMap(
 			 ((source, destination) => {
 				 destination.CreateAt = DateTime.Now;
@@ -28,8 +29,8 @@ namespace AnimalSpawn.Application.Mappings
 				 // destination.Status = true;
 			 }));
 			CreateMap<DocumentoResponseDto, Documento>()
-			 .ForMember(destination => destination.Autor, act => act.MapFrom(source => source.NombreA))
-			 .ForMember(destination => destination.Remitente, act => act.MapFrom(source => source.Nombre))
+			// .ForMember(destination => destination.Autor, act => act.MapFrom(source => source.NombreA))
+			 //.ForMember(destination => destination.Remitente, act => act.MapFrom(source => source.Nombre))
 			 ;
 
 

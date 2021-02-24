@@ -25,11 +25,13 @@ namespace Ekay.Infraestructure.Data.Configurations
                 .HasMaxLength(100)
                 .IsUnicode(false);
 
-            builder.HasOne(d => d.Empresa)
+           /* builder.HasOne(d => d.Empresa)
                 .WithMany(p => p.Autor)
                 .HasForeignKey(d => d.EmpresaId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Autor_0");
+                .HasConstraintName("FK_Autor_0");*/
+
+
             builder.Ignore(e => e.CreateAt);
             builder.Ignore(e => e.CreatedBy);
             builder.Ignore(e => e.UpdateAt);
