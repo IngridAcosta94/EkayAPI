@@ -20,7 +20,7 @@ namespace Ekay.Application.Services
 
 		public async Task AddFirmante(Firmante firmante)
 		{
-			Expression<Func<Firmante, bool>> exprFirmante = item => item.Nombre == firmante.Nombre;
+			Expression<Func<Firmante, bool>> exprFirmante = item => item.NombreF == firmante.NombreF;
 			var firmantes = _unitOfWork.FirmanteRepository.FindByCondition(exprFirmante);
 
 

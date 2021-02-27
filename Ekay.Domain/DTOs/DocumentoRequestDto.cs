@@ -9,8 +9,9 @@ namespace Ekay.Domain.DTOs
 	{
        
        
-       // public int TipoDocId { get; set; }
-       // public int CarpetaId { get; set; }
+        public int TipoDocId { get; set; }
+       public int CarpetaId { get; set; }
+        public int FirmanteId { get; set; }
         public string Contenido { get; set; }
         public DateTime? FechaCreacion { get; set; }
         public string NombreArchivo { get; set; }
@@ -27,6 +28,7 @@ namespace Ekay.Domain.DTOs
         public string Apellido { get; set; }
         public string Correo { get; set; }
         public IFormFile ArchivoSubido { get; set; }
+
 
         public IFormFile Cer { get; set; }
         public IFormFile Key { get; set; }

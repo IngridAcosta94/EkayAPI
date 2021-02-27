@@ -13,15 +13,15 @@ namespace Ekay.Infraestructure.Data.Configurations
 
 		public void Configure(EntityTypeBuilder<Firmante> builder)
 		{
-            builder.Property(e => e.Apellido)
+            builder.Property(e => e.ApellidoF)
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
-            builder.Property(e => e.Correo)
+            builder.Property(e => e.CorreoF)
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
-            builder.Property(e => e.Nombre)
+            builder.Property(e => e.NombreF)
                 .HasMaxLength(100)
                 .IsUnicode(false);
 

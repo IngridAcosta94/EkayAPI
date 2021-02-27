@@ -23,7 +23,7 @@ namespace Ekay.Infraestructure.Repositories
 		private readonly IRepository<Documento> _documentoRepository;
 		private readonly IRepository<Empresa> _empresaRepository;
 		private readonly IRepository<Estatus> _estatusRepository;
-		private readonly IFirmanteRepository _firmanteRepository;
+		private readonly IRepository<Firmante> _firmanteRepository;
 		private readonly IRepository<Historial> _historialRepository;
 		private readonly IRepository<Perfil> _perfilRepository;
 		private readonly IRepository<Remitente> _remitenteRepository;
@@ -50,8 +50,8 @@ namespace Ekay.Infraestructure.Repositories
 		public IRepository<TipoDocumento> TipoDocumentoRepository => _tipoDocumentoRepository ?? new SQLRepository<TipoDocumento>(_context);
 
 		public IRepository <Documento> DocumentoRepository => _documentoRepository ?? new SQLRepository<Documento>(_context);
-		public IFirmanteRepository FirmanteRepository => _firmanteRepository ?? new FirmanteRepository(_context);
-		
+		public IRepository<Firmante> FirmanteRepository => _firmanteRepository ?? new SQLRepository<Firmante>(_context);
+
 		public void Dispose()
 		{
 			

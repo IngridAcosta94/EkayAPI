@@ -18,7 +18,7 @@ namespace Ekay.Domain.Interfaces
 		public IRepository<Documento> DocumentoRepository { get; }
 		public IRepository<Empresa> EmpresaRepository { get; }
 		public IRepository<Estatus> EstatusRepository { get; }
-		public IFirmanteRepository FirmanteRepository { get; }
+		public IRepository <Firmante> FirmanteRepository { get; }
 		public IRepository<Historial> HistorialRepository { get; }
 		public IRepository<Perfil> PerfilRepository { get; }
 		public IRepository<Remitente> RemitenteRepository { get; }

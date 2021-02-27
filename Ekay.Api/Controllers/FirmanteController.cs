@@ -33,6 +33,7 @@ namespace Ekay.Api.Controllers
             var response = new ApiResponse<IEnumerable<FirmanteResponseDto>>(FirmantesDto);
             return Ok(response);
         }
+
         [HttpGet("{id:int}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -44,7 +45,7 @@ namespace Ekay.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(int id, FirmanteRequestDto firmanteDto)
+        public async Task<IActionResult> Post([FromForm] FirmanteRequestDto firmanteDto)
 
         {
             try
@@ -52,11 +53,11 @@ namespace Ekay.Api.Controllers
                 var firmante = _mapper.Map<FirmanteRequestDto, Firmante>(firmanteDto);
 
                 System.Net.Mail.MailMessage mssg = new System.Net.Mail.MailMessage();
-                mssg.To.Add(firmanteDto.Correo);
+                mssg.To.Add(firmanteDto.CorreoF);
                 mssg.Subject = "Firma Documento";
                 mssg.SubjectEncoding = System.Text.Encoding.UTF8;
                 //mssg.Bcc.Add("diegomay100@gmail.com");
-                mssg.Body = "https://localhost:44348/Firmar";
+                mssg.Body = "https://localhost:44348/Firmar?id=1"+"#zoom100";
                 mssg.BodyEncoding = System.Text.Encoding.UTF8;
                 mssg.IsBodyHtml = true;
                 mssg.From = new System.Net.Mail.MailAddress("Ekay.firmar@gmail.com");

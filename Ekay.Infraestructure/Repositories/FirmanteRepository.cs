@@ -13,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace Ekay.Infraestructure.Repositories
 {
-	public class FirmanteRepository : SQLRepository<Firmante>, IFirmanteRepository
+	public class FirmanteRepository 
 	{
-		private readonly EkayContext _context;
+		/*private readonly EkayContext _context;
 		public FirmanteRepository(EkayContext context) : base(context)
 		{
 			this._context = context;
@@ -38,13 +38,6 @@ namespace Ekay.Infraestructure.Repositories
 				Expression<Func<Firmante, bool>> expr = firmante => firmante.Nombre.Contains(filter.Nombre);
 				exprFinal = exprFinal.And(expr);
 			}
-
-
-			if (filter.Documento.HasValue)
-			{
-				Expression<Func<Firmante, bool>> expr = firmante => firmante.DocumentoId == filter.Documento.Value;
-				exprFinal = exprFinal.And(expr);
-			}
 		
 
 			return _context.Firmante.Include(a => a.Documento).Where(exprFinal).AsNoTracking().AsEnumerable();
@@ -56,7 +49,7 @@ namespace Ekay.Infraestructure.Repositories
 			//current.Contenido = documento.Contenido;
 			var rowsUpdate = await _context.SaveChangesAsync();
 			return rowsUpdate > 0;
-		}
+		}*/
 		
 
 		
