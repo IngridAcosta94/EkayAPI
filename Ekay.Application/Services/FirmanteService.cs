@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
-
+using Ekay.Domain.QueyFilters;
 
 namespace Ekay.Application.Services
 {
@@ -53,12 +53,13 @@ namespace Ekay.Application.Services
 			return await _unitOfWork.FirmanteRepository.GetById(id);
 		}
 
-		public IEnumerable<Firmante> GetFirmantes()
+		public IEnumerable<Firmante> GetFirmantes(FirmanteQueyFilter filter)
 		{
-			return _unitOfWork.FirmanteRepository.GetAll();
+			return _unitOfWork.FirmanteRepository.GetFirmantes(filter);
 		}
 
-		
+	
+
 
 		public void UpdateFirmante(Firmante firmante)
 		{

@@ -17,7 +17,7 @@ namespace Ekay.Domain.Entities
         public string NombreF { get; set; }
         public string ApellidoF { get; set; }
         public string CorreoF { get; set; }
-        public string Telefono { get; set; }
+        public string TelefonoF { get; set; }
         public string Puesto { get; set; }
         public string Organizacion { get; set; }
        

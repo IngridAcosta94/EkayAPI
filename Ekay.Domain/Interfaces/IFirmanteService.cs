@@ -1,4 +1,5 @@
 ﻿using Ekay.Domain.Entities;
+using Ekay.Domain.QueyFilters;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Ekay.Domain.Interfaces
 {
 	public interface IFirmanteService
 	{
-		IEnumerable<Firmante> GetFirmantes();
+		IEnumerable<Firmante> GetFirmantes(FirmanteQueyFilter filter);
 		Task<Firmante> GetFirmante(int id);
 		Task AddFirmante(Firmante firmante);
 		void UpdateFirmante(Firmante firmante);

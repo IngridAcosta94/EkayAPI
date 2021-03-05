@@ -75,7 +75,7 @@ namespace Ekay.Application.Services
 			{
 				var docto = await _unitOfWork.DocumentoRepository.GetById(documento.Id);
 				docto.Certificado = documento.Certificado;
-				_unitOfWork.DocumentoRepository.Update(documento);
+				_unitOfWork.DocumentoRepository.Update(docto);
 				await _unitOfWork.SaveChangesAsync();
 			}
 			catch(Exception ex)

@@ -12,9 +12,12 @@ namespace Ekay.Domain.DTOs
         public DateTime? FechaCreacion { get; set; }
        
         public string NombreArchivo { get; set; }
-       
-      //Original
-        
+
+        public string Certificado { get; set; }
+
+
+        //Original
+
 
 
     }

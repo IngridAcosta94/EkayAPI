@@ -14,6 +14,7 @@ using System.Web;
 using Ekay.Application.Services;
 using Ekay.Domain.QueyFilters;
 using System.Text;
+using Microsoft.Data.SqlClient;
 
 namespace Ekay.Api.Controllers
 {
@@ -129,59 +130,63 @@ namespace Ekay.Api.Controllers
 
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Put(int id, [FromForm] DocumentoRequestDto documentoDto)
+        [HttpPut ("{id:int}")]
+        public async Task<IActionResult> Put(int id, [FromForm]DocumentoRequestDto documentoDto)
         {
-            //Original
+            
 
             try
-			{
+            {
                 var documento = _mapper.Map<Documento>(documentoDto);
                 documento.Id = id;
-                documento.CarpetaId = 2;
-                documento.AutorId = 1;
-                documento.FirmanteId = 1;
-                documento.TipoDocId = 2;
-                documento.RemitenteId = 1;
 
 
 
-                string stCadenaConnect = string.Empty;
+				string stCadenaConnect = string.Empty;
                 stCadenaConnect = "Data Source= LAPTOP-H34OREV3 ;Initial Catalog=Ekay1 ;user id=sa ; password=Ingrid1234;";
 
-                string cValue = "";//aqui falla--Solucionado
+                string cValue = "";
                 string cValue2 = "";
                 string cValue3 = "";
                 string stConnection = stCadenaConnect;
 
 
-                Microsoft.Data.SqlClient.SqlConnection _Conexion = new Microsoft.Data.SqlClient.SqlConnection(stConnection);
-                /*la sentencia no se ejecuta debido a la forma por la que se envian los datos 
-                 desde la pagina web se intento forzando el linq con Tolist pero no funcionó// tratar con convertir la sentencia en un proceso almacenado*/
+               
 
-                var _CadenaSql = ("select Documento.RutaBase, Firmante.Nombre, Firmante.Apellido from Firmante inner join Documento on Firmante.Id = Documento.FirmanteId where Documento.Id = @cValue");
-                Microsoft.Data.SqlClient.SqlCommand _Command = new Microsoft.Data.SqlClient.SqlCommand(_CadenaSql, _Conexion);
-                _Command.Parameters.AddWithValue("@cValue", id);
-                _Conexion.Open();
+                string ruta = string.Empty; 
+                string nombre = string.Empty;
+                string apellido = string.Empty;
 
-                Microsoft.Data.SqlClient.SqlDataReader _Reader = _Command.ExecuteReader();
+                
+                using (SqlConnection oConn = new SqlConnection(stConnection))
+                    {
+                        SqlCommand cmd = new SqlCommand("sp_TraerDocumento", oConn);
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                        using (SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd))
+                        {
+                            sqlAdapter.SelectCommand.Parameters.AddWithValue("@id", id);
+                        }
+                        oConn.Open();
+                        cmd.ExecuteNonQuery();
+                        SqlDataReader _Reader = cmd.ExecuteReader();
 
-                if (_Reader.Read())
-                {
-                    cValue = _Reader[0].ToString();
-                    cValue2 = _Reader[1].ToString();
-                    cValue3 = _Reader[2].ToString();
+                        if (_Reader.Read())
+                        {
+                            cValue = _Reader[0].ToString();
+                            cValue2 = _Reader[1].ToString();
+                            cValue3 = _Reader[2].ToString();
+                        }
+                       
+                        string respuesta = cValue + "," + cValue2 + "," + cValue3;
+                        oConn.Close();
+                    char delimitador = ',';
+                    string[] valores = respuesta.Split(delimitador);
+                     ruta = valores[0].ToString();
+                     nombre = valores[1].ToString();
+                     apellido = valores[2].ToString();
+
                 }
-                string respuesta = cValue + "," + cValue2 + "," + cValue3;
-
-                char delimitador = ',';
-                string[] valores = respuesta.Split(delimitador);
-
-                string ruta = valores[0].ToString();
-                string nombre = valores[1].ToString();
-                string apellido = valores[2].ToString();
-
-
+                               
                 //extraer txt
                 ruta = ruta.Replace("\\", "/");
                 string readText = System.IO.File.ReadAllText(ruta);
@@ -193,16 +198,16 @@ namespace Ekay.Api.Controllers
                 try
                 {
 
-                    xmlDoc = new System.Xml.Linq.XDocument(new System.Xml.Linq.XDeclaration("1.0", "UTF-8", null),//tipo de escritura de xml UTF8
+                    xmlDoc = new System.Xml.Linq.XDocument(new System.Xml.Linq.XDeclaration("1.0", "UTF-8", null),//tipo de escritura de xml UTF8 // aqui hay un error
                         new System.Xml.Linq.XElement("XML", new System.Xml.Linq.XAttribute("version", "1.0"),// titulo del XML 
                                                                                                              //Contenido del XML
                        new System.Xml.Linq.XElement("Certificado", readText),
                        new System.Xml.Linq.XElement("NombreFirmante", nombre),
                        new System.Xml.Linq.XElement("ApellidoFirmante", apellido),
-                       new System.Xml.Linq.XElement("Key", "key"),
-                       new System.Xml.Linq.XElement("CER", "cer")
+					   new System.Xml.Linq.XElement("Key", documentoDto.Key.FileName),
+					   new System.Xml.Linq.XElement("CER", documentoDto.Cer.FileName)
 
-                       )
+					   )
                         );
                     //creo un archivo de tipo escritura 
                     var wr = new StringWriter(new StringBuilder());
@@ -211,7 +216,7 @@ namespace Ekay.Api.Controllers
 
                     var filePath2 = Path.Combine(Environment.CurrentDirectory, "Archivos", "certificado" + DateTime.Now.ToString("hhmm") + ".xml");//creo ruta
                     System.IO.File.WriteAllText(filePath2, stXMLBody);//guardo el archivo en la ruta indicada
-                    documento.Certificado = filePath2;//guardo la nueva ruta en el campo Certificado de la Bd
+                    documentoDto.Certificado = filePath2;//guardo la nueva ruta en el campo Certificado de la Bd
                 }
                 catch (Exception ex)
                 {
@@ -219,12 +224,15 @@ namespace Ekay.Api.Controllers
 
                 }
 
+                
+                documento.Certificado = documentoDto.Certificado;
                 await _service.UpdateDocumento(documento);
+
                 var documentoresponseDto = _mapper.Map<Documento, DocumentoResponseDto>(documento);
                 var response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto);// aqui esta el error
 
 
-
+                
 
                 return Ok(response);
             }

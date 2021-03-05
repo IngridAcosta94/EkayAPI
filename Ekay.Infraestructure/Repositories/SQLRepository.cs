@@ -51,6 +51,8 @@ namespace Ekay.Infraestructure.Repositories
 		public async Task<T> GetById(int id)
 		{
 			return await _entities.AsNoTracking().SingleOrDefaultAsync(entity => entity.Id == id);
+
+
 		}
 
 		public void Update(T entity)

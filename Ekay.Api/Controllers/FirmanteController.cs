@@ -3,6 +3,7 @@ using Ekay.Api.Responses;
 using Ekay.Domain.DTOs;
 using Ekay.Domain.Entities;
 using Ekay.Domain.Interfaces;
+using Ekay.Domain.QueyFilters;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -26,9 +27,9 @@ namespace Ekay.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] FirmanteQueyFilter filter)
         {
-            var firmantes = _service.GetFirmantes();
+            var firmantes = _service.GetFirmantes( filter);
             var FirmantesDto = _mapper.Map<IEnumerable<Firmante>, IEnumerable<FirmanteResponseDto>>(firmantes);
             var response = new ApiResponse<IEnumerable<FirmanteResponseDto>>(FirmantesDto);
             return Ok(response);
@@ -57,7 +58,7 @@ namespace Ekay.Api.Controllers
                 mssg.Subject = "Firma Documento";
                 mssg.SubjectEncoding = System.Text.Encoding.UTF8;
                 //mssg.Bcc.Add("diegomay100@gmail.com");
-                mssg.Body = "https://localhost:44348/Firmar?id=1"+"#zoom100";
+                mssg.Body = "https://localhost:44348/Firmar?id=26"+"#zoom100";
                 mssg.BodyEncoding = System.Text.Encoding.UTF8;
                 mssg.IsBodyHtml = true;
                 mssg.From = new System.Net.Mail.MailAddress("Ekay.firmar@gmail.com");

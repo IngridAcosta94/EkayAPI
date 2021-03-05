@@ -13,6 +13,8 @@ namespace AnimalSpawn.Application.Mappings
 
 		public AutoMapperProfile()
 		{
+			CreateMap<DocumentoRequestDto, Firmante>();
+			CreateMap<DocumentoResponseDto, Firmante>();
 			CreateMap<DocumentoRequestDto, Autor>();
 			CreateMap<DocumentoResponseDto, Autor>();
 			CreateMap<DocumentoRequestDto, Remitente>();
@@ -21,6 +23,7 @@ namespace AnimalSpawn.Application.Mappings
 			CreateMap<DocumentoRequestDto, Documento>()
 			 .ForMember(destination => destination.Autor, act => act.MapFrom(source => source))
 			 .ForMember(destination => destination.Remitente, act => act.MapFrom(source => source))
+			  .ForMember(destination => destination.Firmante, act => act.MapFrom(source => source))
 			 //.ForMember(destination => destination.Remitente, act => act.MapFrom(source => source))
 			 .AfterMap(
 			 ((source, destination) => {

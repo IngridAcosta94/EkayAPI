@@ -13,15 +13,21 @@ using System.Threading.Tasks;
 
 namespace Ekay.Infraestructure.Repositories
 {
-	public class FirmanteRepository 
+	public class FirmanteRepository : SQLRepository<Firmante>, IFirmanteRepository
 	{
-		/*private readonly EkayContext _context;
+		private readonly EkayContext _context;
+
+		
 		public FirmanteRepository(EkayContext context) : base(context)
 		{
+			
 			this._context = context;
 
 		}
 
+		
+
+	
 
 		public async Task<Firmante> GetFirmante(int id)
 		{
@@ -33,23 +39,26 @@ namespace Ekay.Infraestructure.Repositories
 		{
 			Expression<Func<Firmante, bool>> exprFinal = firmante => firmante.Id > 0;
 
-			if (!string.IsNullOrEmpty(filter.Nombre) && !string.IsNullOrWhiteSpace(filter.Nombre))
+			if (!string.IsNullOrEmpty(filter.NombreF) && !string.IsNullOrWhiteSpace(filter.NombreF))
 			{
-				Expression<Func<Firmante, bool>> expr = firmante => firmante.Nombre.Contains(filter.Nombre);
+				Expression<Func<Firmante, bool>> expr = firmante => firmante.NombreF.Contains(filter.NombreF);
 				exprFinal = exprFinal.And(expr);
 			}
-		
 
-			return _context.Firmante.Include(a => a.Documento).Where(exprFinal).AsNoTracking().AsEnumerable();
+
+			return _context.Firmante;
 		}
+
+		
 
 		public async Task<bool> UpdateFirmante(Firmante firmante)
 		{
 			var current = await GetFirmante(firmante.Id);
-			//current.Contenido = documento.Contenido;
+			current.NombreF = firmante.NombreF;
+			current.ApellidoF = firmante.ApellidoF;
 			var rowsUpdate = await _context.SaveChangesAsync();
 			return rowsUpdate > 0;
-		}*/
+		}
 		
 
 		

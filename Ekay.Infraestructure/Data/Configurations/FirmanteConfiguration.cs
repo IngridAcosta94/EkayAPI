@@ -33,7 +33,7 @@ namespace Ekay.Infraestructure.Data.Configurations
                 .HasMaxLength(50)
                 .IsUnicode(false);
 
-            builder.Property(e => e.Telefono)
+            builder.Property(e => e.TelefonoF)
                 .HasMaxLength(10)
                 .IsUnicode(false);
 
