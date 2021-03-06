@@ -47,6 +47,7 @@ namespace Ekay.Api
 			services.AddTransient<IAutorService, AutorService>();
 			services.AddTransient<ICarpetaService, CarpetaService>();
 			services.AddTransient<IFirmanteService, FirmanteService>();
+			services.AddTransient<ITipoDocumentoService, TipoDocumentoService>();
 			services.AddScoped(typeof(IRepository<>), typeof(SQLRepository<>));
 			services.AddTransient<IUnitOfWork, UnitOfWork>();
 			services.AddControllers(options =>options.Filters.Add<GlobalExceptionFilter>());

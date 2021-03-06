@@ -13,7 +13,9 @@ namespace Ekay.Domain.DTOs
        
         public string NombreArchivo { get; set; }
 
-        public string Certificado { get; set; }
+        public string Contenido { get; set; }
+
+        //public string Certificado { get; set; }
 
 
         //Original

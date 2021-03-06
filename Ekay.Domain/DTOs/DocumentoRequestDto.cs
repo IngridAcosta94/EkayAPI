@@ -11,7 +11,7 @@ namespace Ekay.Domain.DTOs
        
         public int TipoDocId { get; set; }
        public int CarpetaId { get; set; }
-        public int FirmanteId { get; set; }
+        //public int FirmanteId { get; set; }
         public string Contenido { get; set; }
         public DateTime? FechaCreacion { get; set; }
         public string NombreArchivo { get; set; }
