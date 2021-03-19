@@ -58,11 +58,12 @@ namespace Ekay.Application.Services
 		
 
 
-		public IEnumerable<Documento> GetDocumentos( )
+		public IEnumerable<Documento> GetDocumentos(DocumentoQueryFilter filter)
 		{
-			return _unitOfWork.DocumentoRepository.GetAll( );
+			return _unitOfWork.DocumentoRepository.GetDocumentos( filter);
 		}
 
+		
 
 
 

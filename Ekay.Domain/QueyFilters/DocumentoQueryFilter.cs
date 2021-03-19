@@ -12,8 +12,12 @@ namespace Ekay.Domain.QueyFilters
         public DateTime? FechaCreacion { get; set; }
         public int? Autor { get; set; }
         public int? Remitente { get; set; }
+        public int? Firmante { get; set; }
+
+
         public string NombreArchivo { get; set; }
-      
+        public string Contenido { get; set; }
+
 
 
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SlCJJCIdXw9QRgg1YlhhADg1L0xEu+lDQyhYOFulVfV5VjoERbgDu5v4V6d5mHtEGHiM9UsnC7RYnZBj0u5OAQ==",
+  "dgSpecHash": "Tfq7Ko0oEqyAuZx3pWE5U2T5q0wACcEGIL0/fpOc6INeAvzYjb5NkXOlWhZdMQhqnjiZK6+oSAWduOYgerw3rg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj",
+  "projectFilePath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ekt\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.1\\microsoft.aspnetcore.http.features.5.0.1.nupkg.sha512",
     "C:\\Users\\ekt\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

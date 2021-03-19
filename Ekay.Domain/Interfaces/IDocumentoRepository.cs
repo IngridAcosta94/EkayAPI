@@ -10,8 +10,7 @@ namespace Ekay.Domain.Interfaces
 	public interface IDocumentoRepository : IRepository<Documento>
 	{
 		IEnumerable<Documento> GetDocumentos(DocumentoQueryFilter filter);
-		Task<bool>UpdateDocumento(Documento documento);
-		Task<Documento> GetDocumento(int id);
+		
 
 
 

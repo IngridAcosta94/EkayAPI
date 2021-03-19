@@ -32,9 +32,11 @@ namespace AnimalSpawn.Application.Mappings
 				 // destination.Status = true;
 			 }));
 			CreateMap<DocumentoResponseDto, Documento>()
+			.ForMember(cv => cv.Firmante, c => c.MapFrom(s => s.CorreoF))
+			.ForMember(cv => cv.Remitente, c => c.MapFrom(s => s.Correo));
 			// .ForMember(destination => destination.Autor, act => act.MapFrom(source => source.NombreA))
-			 //.ForMember(destination => destination.Remitente, act => act.MapFrom(source => source.Nombre))
-			 ;
+			//.ForMember(destination => destination.Remitente, act => act.MapFrom(source => source.Nombre))
+			;
 
 
 			CreateMap<Empresa, EmpresaRequestDto>();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QBalKi//ZM++tFuueZuFCCfSTjJ83h/tkDx10trZ1+vHgmoIRqIlcVe7arzj4y/Km6fgPk+FMfetZiZ8uZ30lg==",
+  "dgSpecHash": "yQ5WuBm+cdiQOfg5q4IvogXefgotj5D/nMZ6qXXlAJH8cSXrQvVUlDneKJOIJsjQI4N+2djnaKLJv8l+vCcG6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Infraestructure\\Ekay.Infraestructure.csproj",
+  "projectFilePath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Infraestructure\\Ekay.Infraestructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ekt\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\ekt\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",

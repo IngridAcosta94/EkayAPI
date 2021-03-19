@@ -39,7 +39,7 @@ namespace Ekay.Api
 			services.AddControllers();
 			services.AddDbContext<EkayContext>(options =>
 				options.UseSqlServer(Configuration.GetConnectionString("EkayEF")));
-			//services.AddTransient<IDocumentoRepository, DocumentoRepository>();
+			services.AddTransient<IDocumentoRepository, DocumentoRepository>();
 			services.AddTransient<IDocumentoService, DocumentoService>();
 			services.AddTransient<IEmpresaService, EmpresaService>();
 			services.AddTransient<ICuentaService, CuentaService>();

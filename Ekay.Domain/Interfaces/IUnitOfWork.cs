@@ -15,7 +15,7 @@ namespace Ekay.Domain.Interfaces
 		public IRepository<Carpeta> CarpetaRepository { get; }
 		public IRepository<Cuenta> CuentaRepository { get; }
 		
-		public IRepository<Documento> DocumentoRepository { get; }
+		public IDocumentoRepository DocumentoRepository { get; }
 		public IRepository<Empresa> EmpresaRepository { get; }
 		public IRepository<Estatus> EstatusRepository { get; }
 		public IFirmanteRepository FirmanteRepository { get; }

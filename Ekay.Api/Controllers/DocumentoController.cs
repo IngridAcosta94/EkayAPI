@@ -35,11 +35,11 @@ namespace Ekay.Api.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult> Get( )
+        public  IActionResult Get([FromQuery] DocumentoQueryFilter filter)
         {
             try
             {
-                var documentos = _service.GetDocumentos();
+                var documentos = _service.GetDocumentos(filter);
                 var DocumentosDto = _mapper.Map<IEnumerable<Documento>, IEnumerable<DocumentoResponseDto>>(documentos);
                 var response = new ApiResponse<IEnumerable<DocumentoResponseDto>>(DocumentosDto);
                 return Ok(response);
@@ -60,6 +60,41 @@ namespace Ekay.Api.Controllers
             return Ok(response);
 
         }
+
+
+        //CREAR CLASE CON CUERPO DE CORREO HTML
+        private static string CrearBodyEmail(string sAviso, string sMensaje, string sFirmante)
+        {
+            string stBody = string.Empty;
+            stBody = "<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>" +
+                   " <html xmlns='http://www.w3.org/1999/xhtml'> " +
+                   "<head> " +
+                   "<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />" +
+                   "<title>Avisos</title>" +
+                   "</head>" +
+                   "<body>" +
+                   "<table cellpadding='0' cellspacing='0' border='0' width='500'>" +
+                   "<tr>" +
+                   "   <td height='30' width='500'><img src='https://i.postimg.cc/s2JNwQdV/Banner-Ekay-2.png'/></td>" +
+                   "</tr>" +
+                    "<tr>" +
+                   "   <td height='30'><font face='Arial' size='2' align='justify'><b>" + sFirmante + "</b></font></td>" +
+                   "</tr>" +
+                   "<tr>" +
+                   "   <td height='30'><font face='Arial' size='2' align='justify'>" + sAviso + "</font></td>" +
+                   "</tr>" +
+                   "<tr>" +
+                   "   <td height='30'><font face='Arial' size='2' color='#FF0000'>" + sMensaje + "</font></td>" +
+                   "</tr>" +
+                   "<tr>" +
+                   "   <td height='30'><font face='Arial' size='2'><b>Att. -El equipo de E-Kay.</b></font></td>" +
+                   "</tr>" +
+                   "</table>" +
+                   "</body>" +
+                   "</html>";
+            return stBody;
+        }//fin:CrearBodyEmail
+         //---------------------------------------------------------------------
 
         [HttpPost]
 
@@ -95,13 +130,44 @@ namespace Ekay.Api.Controllers
                         System.IO.File.WriteAllText(filePath2, filed);
                         documento.RutaBase = filePath2;
 
+              
                 await _service.AddDocumento(documento);
                 var documentoresponseDto = _mapper.Map<Documento, DocumentoResponseDto>(documento);
                 var response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto);
 
+                //MIO
+
+                System.Net.Mail.MailMessage mssg = new System.Net.Mail.MailMessage();
+                mssg.To.Add(documentoDto.CorreoF);
+                string mensaje = "Usted ha sido referido por una compañia o por un tercero, como el firmante de un documento  en nuestra plataforma. Recuerde tener sus archivos .key y .cer ya que son necesarios para completar dicha firma. Para firmar pulse en el siguiente enlace:";
+                mssg.Subject = "Firma de Documento | E-Kay";
+                mssg.SubjectEncoding = System.Text.Encoding.UTF8;
+                //mssg.Bcc.Add("diegomay100@gmail.com");
+                string nombrefirmante = "Estimado(a) " + documentoDto.NombreF + ":";
+                mssg.Body = CrearBodyEmail(mensaje, "https://localhost:44348/Firmar?id=" + documento.Id + "#zoom100", nombrefirmante);
+                mssg.BodyEncoding = System.Text.Encoding.UTF8;
+                mssg.IsBodyHtml = true;
+                mssg.From = new System.Net.Mail.MailAddress("Ekay.firmar@gmail.com");
+
+
+                System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+                cliente.Credentials = new System.Net.NetworkCredential("Ekay.firmar@gmail.com", "Firmando3LFutuR0");
+                cliente.Port = 587;
+                cliente.EnableSsl = true;
+                cliente.Host = "smtp.gmail.com";
+
+                try
+                {
+                    cliente.Send(mssg);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+
+
 
                 return Ok(response);
-
 
 
             }
@@ -140,10 +206,10 @@ namespace Ekay.Api.Controllers
                 var documento = _mapper.Map<Documento>(documentoDto);
                 documento.Id = id;
 
-
+                //Aqui pongo un if para el put :v
 
 				string stCadenaConnect = string.Empty;
-                stCadenaConnect = "Data Source= LAPTOP-H34OREV3 ;Initial Catalog=Ekay1 ;user id=sa ; password=Ingrid1234;";
+                stCadenaConnect = "Data Source= LAPTOP-H34OREV3 ;Initial Catalog=EkayPRUEBAS ;user id=sa ; password=Ingrid1234;";
 
                 string cValue = "";
                 string cValue2 = "";
@@ -231,8 +297,34 @@ namespace Ekay.Api.Controllers
                 var documentoresponseDto = _mapper.Map<Documento, DocumentoResponseDto>(documento);
                 var response = new ApiResponse<DocumentoResponseDto>(documentoresponseDto);// aqui esta el error
 
+                //correo confirmar
+               /* System.Net.Mail.MailMessage mssg = new System.Net.Mail.MailMessage();
+                mssg.To.Add(documentoDto.CorreoF);
+                mssg.Subject = "Firma de Documento (completada) | E-Kay";
+                mssg.SubjectEncoding = System.Text.Encoding.UTF8;
+                string remitente = documentoDto.Correo;
+                mssg.Bcc.Add(remitente);
+                mssg.IsBodyHtml = true;
+                mssg.Body = "El documento "+ documento.NombreArchivo + " ha sido firmado exitosamente por: " + documentoDto.NombreF + ", en fecha: " + DateTime.Now;
+                mssg.BodyEncoding = System.Text.Encoding.UTF8;
+                mssg.From = new System.Net.Mail.MailAddress("Ekay.firmar@gmail.com");
 
-                
+
+                System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+                cliente.Credentials = new System.Net.NetworkCredential("Ekay.firmar@gmail.com", "Firmando3LFutuR0");
+                cliente.Port = 587;
+                cliente.EnableSsl = true;
+                cliente.Host = "smtp.gmail.com";
+
+                try
+                {
+                    cliente.Send(mssg);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }*/
+
 
                 return Ok(response);
             }
@@ -241,6 +333,8 @@ namespace Ekay.Api.Controllers
                 return BadRequest(ex.Message);
             }
 
+
+            
 
         }
     }

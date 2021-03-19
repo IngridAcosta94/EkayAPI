@@ -13,10 +13,10 @@ using System.Threading.Tasks;
 
 namespace Ekay.Infraestructure.Repositories
 {
-	public class DocumentoRepository //: SQLRepository<Documento>, IDocumentoRepository
+	public class DocumentoRepository : SQLRepository<Documento>, IDocumentoRepository
 	{
 		//private readonly DbSet<T> _entities;
-		/*private readonly EkayContext _context;
+		private readonly EkayContext _context;
 		public DocumentoRepository(EkayContext context) : base(context)
 		{
 			this._context = context;
@@ -38,6 +38,13 @@ namespace Ekay.Infraestructure.Repositories
 				Expression<Func<Documento, bool>> expr = documento => documento.NombreArchivo.Contains(filter.NombreArchivo);
 				exprFinal = exprFinal.And(expr);
 			}
+
+			if (!string.IsNullOrEmpty(filter.Contenido) && !string.IsNullOrWhiteSpace(filter.Contenido))
+			{
+				Expression<Func<Documento, bool>> expr = documento => documento.Contenido.Contains(filter.Contenido);
+				exprFinal = exprFinal.And(expr);
+			}
+
 			if (filter.FechaCreacion.HasValue && filter.FechaCreacion.HasValue)
 			{
 				Expression<Func<Documento, bool>> expr = documento => documento.FechaCreacion.Value.Date >= filter.FechaCreacion.Value.Date
@@ -56,17 +63,16 @@ namespace Ekay.Infraestructure.Repositories
 				Expression<Func<Documento, bool>> expr = documento => documento.AutorId == filter.Remitente.Value;
 				exprFinal = exprFinal.And(expr);
 			}
+			if (filter.Firmante.HasValue)
+			{
+				Expression<Func<Documento, bool>> expr = documento => documento.FirmanteId == filter.Firmante.Value;
+				exprFinal = exprFinal.And(expr);
+			}
 
-			return _context.Documento.Include(a => a.Autor).Include(r => r.Remitente).Where(exprFinal).AsNoTracking().AsEnumerable();
+			return _context.Documento.Include(a => a.Autor).Include(r => r.Remitente).Include(f => f.Firmante).Where(exprFinal).AsNoTracking().AsEnumerable();
 		}
 
-		public async Task<bool> UpdateDocumento(Documento documento)
-		{
-			var current = await GetDocumento(documento.Id);
-			current.Contenido = documento.Contenido;
-			var rowsUpdate = await _context.SaveChangesAsync();
-			return rowsUpdate > 0;
-		}*/
+		
 
 		
 	}

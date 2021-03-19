@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Ekay.Api.csproj": {}
+    "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Api\\Ekay.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Ekay.Api.csproj": {
+    "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Api\\Ekay.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Ekay.Api.csproj",
+        "projectUniqueName": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Api\\Ekay.Api.csproj",
         "projectName": "Ekay.Api",
-        "projectPath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\Ekay.Api.csproj",
+        "projectPath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Api\\Ekay.Api.csproj",
         "packagesPath": "C:\\Users\\ekt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Api\\obj\\",
+        "outputPath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ekt\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,14 +27,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Application\\Ekay.Application.csproj": {
-                "projectPath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Application\\Ekay.Application.csproj"
+              "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Application\\Ekay.Application.csproj": {
+                "projectPath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Application\\Ekay.Application.csproj"
               },
-              "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj": {
-                "projectPath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj"
+              "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj": {
+                "projectPath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj"
               },
-              "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Infraestructure\\Ekay.Infraestructure.csproj": {
-                "projectPath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Infraestructure\\Ekay.Infraestructure.csproj"
+              "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Infraestructure\\Ekay.Infraestructure.csproj": {
+                "projectPath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Infraestructure\\Ekay.Infraestructure.csproj"
               }
             }
           }
@@ -109,14 +109,14 @@
         }
       }
     },
-    "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Application\\Ekay.Application.csproj": {
+    "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Application\\Ekay.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Application\\Ekay.Application.csproj",
+        "projectUniqueName": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Application\\Ekay.Application.csproj",
         "projectName": "Ekay.Application",
-        "projectPath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Application\\Ekay.Application.csproj",
+        "projectPath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Application\\Ekay.Application.csproj",
         "packagesPath": "C:\\Users\\ekt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Application\\obj\\",
+        "outputPath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ekt\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -132,8 +132,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj": {
-                "projectPath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj"
+              "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj": {
+                "projectPath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj"
               }
             }
           }
@@ -183,14 +183,14 @@
         }
       }
     },
-    "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj": {
+    "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj",
         "projectName": "Ekay.Domain",
-        "projectPath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj",
+        "projectPath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj",
         "packagesPath": "C:\\Users\\ekt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Domain\\obj\\",
+        "outputPath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ekt\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -253,14 +253,14 @@
         }
       }
     },
-    "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Infraestructure\\Ekay.Infraestructure.csproj": {
+    "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Infraestructure\\Ekay.Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Infraestructure\\Ekay.Infraestructure.csproj",
+        "projectUniqueName": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Infraestructure\\Ekay.Infraestructure.csproj",
         "projectName": "Ekay.Infraestructure",
-        "projectPath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Infraestructure\\Ekay.Infraestructure.csproj",
+        "projectPath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Infraestructure\\Ekay.Infraestructure.csproj",
         "packagesPath": "C:\\Users\\ekt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Infraestructure\\obj\\",
+        "outputPath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ekt\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -276,8 +276,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj": {
-                "projectPath": "C:\\Users\\ekt\\source\\repos\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj"
+              "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj": {
+                "projectPath": "C:\\Users\\ekt\\Desktop\\2\\API-Ekay\\Ekay\\Ekay.Domain\\Ekay.Domain.csproj"
               }
             }
           }
