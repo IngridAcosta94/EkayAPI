@@ -135,6 +135,17 @@ namespace AnimalSpawn.Application.Mappings
 			CreateMap<CuentaResponseDto, Cuenta>();
 
 
+			CreateMap<TipoDocumento, TipoDocumentoRequestDto>();
+			CreateMap<TipoDocumento, TipoDocumentoResponseDto>();
+			CreateMap<TipoDocumentoRequestDto, TipoDocumento>().AfterMap(
+				((source, destination) => {
+					destination.CreateAt = DateTime.Now;
+					destination.CreatedBy = 3;
+
+				}));
+			CreateMap<TipoDocumentoResponseDto, TipoDocumento>();
+
+
 		}
 
 
